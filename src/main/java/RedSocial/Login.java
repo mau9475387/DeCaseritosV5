@@ -6,6 +6,9 @@ package RedSocial;
 
 
 import java.awt.Color;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -22,8 +25,9 @@ int xMouse,yMouse;//posicion del mouse en la pantalla
         setLocationRelativeTo(null);//fija la ventana de login al centro de la pantalla
         ingresarBtn.setBackground(new Color(242,242,242));
         crearCuentaBtn.setBackground(new Color(242,242,242));
-        
-        
+        ImageIcon imagen = new ImageIcon("src\\main\\java\\recursos\\imagenes\\RICK Y MORTY.png");
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(imagenLogin.getWidth(), imagenLogin.getHeight(),Image.SCALE_DEFAULT));
+        imagenLogin.setIcon(icono);
     }
 
     /**
@@ -130,9 +134,7 @@ int xMouse,yMouse;//posicion del mouse en la pantalla
         slogan.setForeground(new java.awt.Color(255, 255, 255));
         slogan.setText("Conoce tu ciudad, conoce tu comida");
         FondoDC.add(slogan, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 340, 30));
-
-        imagenLogin.setIcon(new javax.swing.ImageIcon("D:\\DeCaseritosV5\\src\\main\\java\\recursos\\imagenes\\fondoLogin.png")); // NOI18N
-        FondoDC.add(imagenLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        FondoDC.add(imagenLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 520));
 
         jPanel1.add(FondoDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 350, 520));
 
