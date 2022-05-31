@@ -30,6 +30,7 @@ public class Sitio extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         menuBar.setVisible(false);
+        //ImageIcon imagen = new ImageIcon("C:\\Users\\Mau\\Downloads\\gato.jpg");
         ImageIcon imagen = new ImageIcon("C:\\Users\\Mau\\Downloads\\gato.jpg");
         //C:\Users\Mau\Downloads
         //ImageIcon imagen = new ImageIcon("D:\\Universidad\\2022 primer Semestre\\Taller de Progra\\DeCaseritos\\src\\main\\java\\Imagenes\\perfilPred.jpg");

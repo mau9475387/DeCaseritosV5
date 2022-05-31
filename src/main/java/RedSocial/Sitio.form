@@ -98,11 +98,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="logotipo">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Universidad\2022 primer Semestre\Taller de Progra\DeCaseritos\src\main\java\Imagenes\logoP.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="perfil">
               <Properties>
@@ -177,11 +172,6 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="homeL">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="D:\Universidad\2022 primer Semestre\Taller de Progra\DeCaseritos\src\main\java\Imagenes\homeLN.png"/>
-                    </Property>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -213,11 +203,6 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="menuL">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="D:\Universidad\2022 primer Semestre\Taller de Progra\DeCaseritos\src\main\java\Imagenes\menuD.png"/>
-                    </Property>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
