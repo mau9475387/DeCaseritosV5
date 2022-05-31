@@ -131,7 +131,7 @@ int xMouse,yMouse;//posicion del mouse en la pantalla
         slogan.setText("Conoce tu ciudad, conoce tu comida");
         FondoDC.add(slogan, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 340, 30));
 
-        imagenLogin.setIcon(new javax.swing.ImageIcon("D:\\Universidad\\2022 primer Semestre\\Taller de Progra\\DeCaseritos\\src\\main\\java\\Imagenes\\fondoLogin.png")); // NOI18N
+        imagenLogin.setIcon(new javax.swing.ImageIcon("D:\\DeCaseritosV5\\src\\main\\java\\recursos\\imagenes\\fondoLogin.png")); // NOI18N
         FondoDC.add(imagenLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel1.add(FondoDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 350, 520));
