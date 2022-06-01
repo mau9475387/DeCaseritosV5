@@ -14,5 +14,6 @@ public class prueba2 {
         System.out.println("sera que se copia");
         System.out.println("no sea malo diosito");
         System.out.println("alabado sea jebus");
+        System.out.println("tmre");
             }
 }
