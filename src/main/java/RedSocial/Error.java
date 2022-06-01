@@ -40,6 +40,7 @@ public class Error extends javax.swing.JFrame {
         fondoBlanco = new javax.swing.JPanel();
         cerrarBtn = new javax.swing.JPanel();
         cerrarLbl = new javax.swing.JLabel();
+        mensajeLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -140,6 +141,8 @@ public class Error extends javax.swing.JFrame {
             .addComponent(cerrarLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
+        mensajeLbl.setText("mensaje de error");
+
         javax.swing.GroupLayout fondoBlancoLayout = new javax.swing.GroupLayout(fondoBlanco);
         fondoBlanco.setLayout(fondoBlancoLayout);
         fondoBlancoLayout.setHorizontalGroup(
@@ -148,11 +151,17 @@ public class Error extends javax.swing.JFrame {
                 .addContainerGap(371, Short.MAX_VALUE)
                 .addComponent(cerrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
+            .addGroup(fondoBlancoLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(mensajeLbl)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fondoBlancoLayout.setVerticalGroup(
             fondoBlancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoBlancoLayout.createSequentialGroup()
-                .addContainerGap(146, Short.MAX_VALUE)
+                .addGap(58, 58, 58)
+                .addComponent(mensajeLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addComponent(cerrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
@@ -245,6 +254,10 @@ public class Error extends javax.swing.JFrame {
     private javax.swing.JLabel exitLbl;
     private javax.swing.JPanel fondo;
     private javax.swing.JPanel fondoBlanco;
+    private javax.swing.JLabel mensajeLbl;
     private javax.swing.JPanel superior;
     // End of variables declaration//GEN-END:variables
+public void cambiarMensaje(String nuevo){
+    mensajeLbl.setText(nuevo);
+}
 }
