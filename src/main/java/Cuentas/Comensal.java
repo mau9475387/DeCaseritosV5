@@ -37,6 +37,6 @@ public class Comensal extends Cuenta{
     
     
     public String toString(){
-        return nombre +"-"+usuario+"-"+contraseña+"-"+email+"-"+tipo;
+        return nombre +"----"+usuario+"-----"+contraseña+"----"+email+"-----"+tipo;
     }    
 }

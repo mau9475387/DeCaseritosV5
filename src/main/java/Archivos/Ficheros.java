@@ -26,7 +26,7 @@ public class Ficheros {
             FileWriter fw = null;
             BufferedWriter bw = null;
             String nombre = com.getNombre();
-            String dir = "D:\\Universidad\\2022 primer Semestre\\Taller de Progra\\DeCaseritos\\src\\main\\java\\com\\Ficheros\\Cuentas\\Comensal\\" + nombre;
+            String dir = "src\\main\\java\\recursos\\Cuentas\\Comensales\\" + nombre;
             File d = new File(dir);
                 if(d.mkdirs()){
                 File f = new File(dir+"\\"+nombre+".txt");
@@ -35,8 +35,8 @@ public class Ficheros {
                 e.mkdir();
                 fw = new FileWriter(f,true);
                 bw = new BufferedWriter(fw);
-                bw.write(com.getNombre()+"||"+com.getUsuario()+"||"+com.getContraseña()+"||"+
-                    com.getEmail()+"||"+com.getCelular()+"||"+com.getTipo());
+                bw.write(com.getNombre()+"-"+com.getUsuario()+"-"+com.getContraseña()+"-"+
+                    com.getEmail()+"-"+com.getCelular()+"-"+com.getTipo());
             
                 }else{
                 Error error = new Error();
@@ -56,12 +56,12 @@ public class Ficheros {
     public Comensal leerComensal(String nombre){
         Comensal res = null;
         try{
-            File f = new File("D:\\Universidad\\2022 primer Semestre\\Taller de Progra\\DeCaseritos\\src\\main\\java\\com\\Ficheros\\Cuentas\\Comensal\\" + nombre);
+            File f = new File("src\\main\\java\\recursos\\Cuentas\\Comensales\\" + nombre);
                 if (f.exists()){
                     FileReader fr = new FileReader(f+"\\"+nombre+".txt");
                     BufferedReader br = new BufferedReader(fr);
                     String linea=br.readLine();
-                    String[] com = linea.split("||");
+                    String[] com = linea.split("-");
                     Comensal comensal = new Comensal(com[0],com[1],com[2],
                                             com[3]);
                     res = comensal;
