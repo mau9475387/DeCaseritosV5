@@ -15,5 +15,6 @@ public class prueba2 {
         System.out.println("no sea malo diosito");
         System.out.println("alabado sea jebus");
         System.out.println("tmre");
+        System.out.println("ajj");
             }
 }
