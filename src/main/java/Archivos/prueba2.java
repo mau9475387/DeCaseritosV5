@@ -17,5 +17,6 @@ public class prueba2 {
         System.out.println("tmre");
         System.out.println("ajj");
         System.out.println("1237890");
+        System.out.println("98765432");
             }
 }
