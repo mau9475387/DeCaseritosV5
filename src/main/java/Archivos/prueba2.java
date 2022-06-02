@@ -18,6 +18,5 @@ public class prueba2 {
         System.out.println("ajj");
         System.out.println("1237890");
         System.out.println("despues de las pruebas");
-        System.out.println("despues de tanto fallar");
         }
 }
