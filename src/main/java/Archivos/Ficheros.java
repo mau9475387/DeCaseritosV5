@@ -21,15 +21,18 @@ public class Ficheros {
     public Ficheros(){
         
     }
+    
+    
+    
     public void crearComensal(Comensal com){//guarda datos de comensales en archivos txt
         try{
             FileWriter fw = null;
             BufferedWriter bw = null;
-            String correo = com.getEmail();
-            String dir = "src\\main\\java\\recursos\\Cuentas\\Comensales\\" + correo;
+            String usuario = com.getUsuario();
+            String dir = "src\\main\\java\\recursos\\Cuentas\\Comensales\\" + usuario;
             File d = new File(dir);
                 if(d.mkdirs()){
-                File f = new File(dir+"\\"+correo+".txt");
+                File f = new File(dir+"\\"+usuario+".txt");
                 String dir2 = dir + "\\publicaciones";
                 File e = new File (dir2);
                 e.mkdir();
@@ -53,12 +56,12 @@ public class Ficheros {
         }
     }
     
-    public Comensal leerComensal(String mail){
+    public Comensal leerComensal(String usuario){
         Comensal res = null;
         try{
-            File f = new File("src\\main\\java\\recursos\\Cuentas\\Comensales\\" + mail);
+            File f = new File("src\\main\\java\\recursos\\Cuentas\\Comensales\\" + usuario);
                 if (f.exists()){
-                    FileReader fr = new FileReader(f+"\\"+mail+".txt");
+                    FileReader fr = new FileReader(f+"\\"+usuario+".txt");
                     BufferedReader br = new BufferedReader(fr);
                     String linea=br.readLine();
                     String[] com = linea.split("-");

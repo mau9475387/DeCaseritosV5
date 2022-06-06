@@ -31,9 +31,12 @@ public class Login extends javax.swing.JFrame {
     
     int xMouse,yMouse;//posicion del mouse en la pantalla
     Error error;
-    Error impresiones;
+    //Error impresiones;
     Ficheros ficheros;
     ListaDE<Cuenta> cuentas;
+    boolean usuarioExiste;
+    boolean passExiste;
+    
     public Login() {
         initComponents();
         setLocationRelativeTo(null);//fija la ventana de login al centro de la pantalla
@@ -41,15 +44,17 @@ public class Login extends javax.swing.JFrame {
         crearCuentaBtn.setBackground(new Color(242,242,242));
         error = new Error();
         ficheros = new Ficheros();
+        usuarioExiste=false;
+        passExiste= false;
         ImageIcon imagen = new ImageIcon("src\\main\\java\\recursos\\imagenes\\fondoLogin.png");
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(imagenLogin.getWidth(), imagenLogin.getHeight(),Image.SCALE_DEFAULT));
         imagenLogin.setIcon(icono);
         cuentas = new ListaDE<Cuenta>();
         leerComensales();
-        impresiones = new Error();
-        impresiones.cambiarTitulo("Lista de cuentas");
-        impresiones.cambiarMensaje(cuentas.toString());
-        impresiones.setVisible(true);
+        //impresiones = new Error();
+        //impresiones.cambiarTitulo("Lista de cuentas");
+        //impresiones.cambiarMensaje(cuentas.toString());
+        //impresiones.setVisible(true);
     }
 
     /**
@@ -68,11 +73,11 @@ public class Login extends javax.swing.JFrame {
         FondoDC = new javax.swing.JPanel();
         slogan = new javax.swing.JLabel();
         imagenLogin = new javax.swing.JLabel();
-        LabelContraseña = new javax.swing.JLabel();
-        LabelUsuario = new javax.swing.JLabel();
+        contraseñaLbl = new javax.swing.JLabel();
+        emailLbl = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        userText = new javax.swing.JTextField();
+        emailText = new javax.swing.JTextField();
         passText = new javax.swing.JPasswordField();
         iniciarSesionLbl = new javax.swing.JLabel();
         ingresarBtn = new javax.swing.JPanel();
@@ -160,13 +165,13 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.add(FondoDC, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 350, 520));
 
-        LabelContraseña.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
-        LabelContraseña.setText("Contraseña:");
-        jPanel1.add(LabelContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 350, 40));
+        contraseñaLbl.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        contraseñaLbl.setText("Contraseña:");
+        jPanel1.add(contraseñaLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 350, 40));
 
-        LabelUsuario.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
-        LabelUsuario.setText("Usuario:");
-        jPanel1.add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 350, 40));
+        emailLbl.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        emailLbl.setText("E-mail :");
+        jPanel1.add(emailLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 350, 40));
 
         jSeparator1.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
@@ -176,21 +181,21 @@ public class Login extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(204, 204, 204));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 400, 10));
 
-        userText.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        userText.setForeground(new java.awt.Color(204, 204, 204));
-        userText.setText("Introduce tu nombre de usuario");
-        userText.setBorder(null);
-        userText.addMouseListener(new java.awt.event.MouseAdapter() {
+        emailText.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        emailText.setForeground(new java.awt.Color(204, 204, 204));
+        emailText.setText("Introduce tu nombre de usuario");
+        emailText.setBorder(null);
+        emailText.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                userTextMousePressed(evt);
+                emailTextMousePressed(evt);
             }
         });
-        userText.addActionListener(new java.awt.event.ActionListener() {
+        emailText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userTextActionPerformed(evt);
+                emailTextActionPerformed(evt);
             }
         });
-        jPanel1.add(userText, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 390, 40));
+        jPanel1.add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 390, 40));
 
         passText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         passText.setForeground(new java.awt.Color(204, 204, 204));
@@ -338,17 +343,17 @@ public class Login extends javax.swing.JFrame {
         crearCuentaBtn.setBackground(new Color(242,242,242));
     }//GEN-LAST:event_crearCuentaBtnMouseExited
 
-    private void userTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTextMousePressed
-        if(userText.getText().equals("Introduce tu nombre de usuario")){
-            userText.setText("");
-            userText.setForeground(Color.black);
+    private void emailTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailTextMousePressed
+        if(emailText.getText().equals("Introduce tu nombre de usuario")){
+            emailText.setText("");
+            emailText.setForeground(Color.black);
         }
         
         if(String.valueOf(passText.getPassword()).isEmpty()){
             passText.setText("********");
             passText.setForeground(Color.gray);
         }
-    }//GEN-LAST:event_userTextMousePressed
+    }//GEN-LAST:event_emailTextMousePressed
 
     private void passTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passTextMousePressed
         if(String.valueOf(passText.getPassword()).equals("********")){
@@ -356,9 +361,9 @@ public class Login extends javax.swing.JFrame {
             passText.setForeground(Color.black);
         }
         
-        if(userText.getText().isEmpty()){
-            userText.setText("Introduce tu nombre de usuario");       
-            userText.setForeground(Color.gray);
+        if(emailText.getText().isEmpty()){
+            emailText.setText("Introduce tu nombre de usuario");       
+            emailText.setForeground(Color.gray);
         }
     }//GEN-LAST:event_passTextMousePressed
 
@@ -368,14 +373,27 @@ public class Login extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_crearCuentaBtnMouseClicked
 
-    private void userTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTextActionPerformed
+    private void emailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userTextActionPerformed
+    }//GEN-LAST:event_emailTextActionPerformed
 
     private void ingresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarBtnMouseClicked
-    Sitio muro = new Sitio();
-    muro.setVisible(true);
-    dispose();
+    if(verificarCuenta(emailText.getText(),String.valueOf(passText.getPassword()))){
+            Sitio l= new Sitio(cuentas);
+            l.setVisible(true);
+            dispose();
+    }else{
+        if(usuarioExiste==false && passExiste==false){
+            error.cambiarMensaje("usuario y contraseña incorrectos");
+            error.setVisible(true);
+        }else{
+            if(usuarioExiste==true && passExiste==false){
+            error.cambiarMensaje("contraseña incorrecta");
+            error.setVisible(true);
+            usuarioExiste=false;
+            }
+        }
+    }
     
     }//GEN-LAST:event_ingresarBtnMouseClicked
 
@@ -417,11 +435,12 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel FondoDC;
-    private javax.swing.JLabel LabelContraseña;
-    private javax.swing.JLabel LabelUsuario;
     private javax.swing.JPanel barraSuperior;
+    private javax.swing.JLabel contraseñaLbl;
     private javax.swing.JPanel crearCuentaBtn;
     private javax.swing.JLabel crearCuentaLabel;
+    private javax.swing.JLabel emailLbl;
+    private javax.swing.JTextField emailText;
     private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel imagenLogin;
@@ -433,7 +452,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPasswordField passText;
     private javax.swing.JLabel slogan;
-    private javax.swing.JTextField userText;
     // End of variables declaration//GEN-END:variables
 
 /**lee cada uno de los archivos de la carpeta comensales y los añade como objetos de tipo comensal
@@ -450,4 +468,24 @@ public void leerComensales(){
             error.cambiarMensaje(""+e.getMessage());
         }
 }
+
+public boolean verificarCuenta(String usuario,String pass){
+    boolean res=false;
+    
+    for(int i=0;i<cuentas.tamaño()-1 && res !=true;i++){
+        if(cuentas.obtenerPos(i).getUsuario().equals(usuario)){
+            usuarioExiste = true;
+        }
+        if(cuentas.obtenerPos(i).getContraseña().equals(pass)){
+            passExiste = true;
+        }
+        if(usuarioExiste==true && passExiste==true){
+            res = true;
+        }
+        
+     }
+    return res;
+    }
+    
 }
+

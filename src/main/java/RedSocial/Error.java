@@ -76,6 +76,9 @@ public class Error extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 exitBtnMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitBtnMouseExited(evt);
+            }
         });
 
         exitLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -204,9 +207,14 @@ public class Error extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnMouseEntered
 
     private void cerrarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarBtnMouseExited
-        exitBtn.setBackground(naranja);
-        exitLbl.setForeground(Color.white);
+        cerrarBtn.setBackground(naranja);
+        cerrarLbl.setForeground(Color.white);
     }//GEN-LAST:event_cerrarBtnMouseExited
+
+    private void exitBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseExited
+        exitBtn.setBackground(naranja);
+        exitLbl.setForeground(Color.WHITE);
+    }//GEN-LAST:event_exitBtnMouseExited
 
     /**
      * @param args the command line arguments

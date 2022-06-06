@@ -13,6 +13,7 @@ public class NodoDE<E> {
         sig = null;
     }
     
+    
     public E getDato(){
         return dato;
     }

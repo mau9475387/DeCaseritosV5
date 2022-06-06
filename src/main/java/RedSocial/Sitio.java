@@ -5,6 +5,8 @@
 package RedSocial;
 
 
+import Cuentas.Cuenta;
+import EDL.ListaDE;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
@@ -23,16 +25,20 @@ public class Sitio extends javax.swing.JFrame {
     Color naranjaS= new Color(250,183,44);
     Color gris = new Color(242,242,242);
     boolean desplegado = false;
+    ListaDE<Cuenta> cuentas;
     
     /**
      * Creates new form Sitio
      */
-    public Sitio() {
+    public Sitio(ListaDE<Cuenta> acc) {
         initComponents();
         setLocationRelativeTo(null);
         menuBar.setVisible(false);
+        homeL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/homeLN.png"));
+        menuL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/menuD.png"));
+        cuentas = acc;
         //ImageIcon imagen = new ImageIcon("C:\\Users\\Mau\\Downloads\\gato.jpg");
-        ImageIcon imagen = new ImageIcon("C:\\Users\\Mau\\Downloads\\gato.jpg");
+        ImageIcon imagen = new ImageIcon("src/main/java/recursos/imagenes/RICK Y MORTY.png");
         //C:\Users\Mau\Downloads
         //ImageIcon imagen = new ImageIcon("D:\\Universidad\\2022 primer Semestre\\Taller de Progra\\DeCaseritos\\src\\main\\java\\Imagenes\\perfilPred.jpg");
         //C:\Users\Mau\Downloads
@@ -56,12 +62,12 @@ public class Sitio extends javax.swing.JFrame {
         superior = new javax.swing.JPanel();
         logotipo = new javax.swing.JLabel();
         perfil = new javax.swing.JPanel();
-        foto = new javax.swing.JLabel();
         nUsuario = new javax.swing.JLabel();
         hombeBtn = new javax.swing.JPanel();
         homeL = new javax.swing.JLabel();
         menuBtn = new javax.swing.JPanel();
         menuL = new javax.swing.JLabel();
+        foto = new javax.swing.JLabel();
         menuBar = new javax.swing.JPanel();
         logOutBtn = new javax.swing.JPanel();
         logOutL = new javax.swing.JLabel();
@@ -87,8 +93,8 @@ public class Sitio extends javax.swing.JFrame {
                 superiorMousePressed(evt);
             }
         });
-
-        logotipo.setIcon(new javax.swing.ImageIcon("D:\\Universidad\\2022 primer Semestre\\Taller de Progra\\DeCaseritos\\src\\main\\java\\Imagenes\\logoP.png")); // NOI18N
+        superior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        superior.add(logotipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         perfil.setBackground(new Color(250,183,44));
         perfil.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,12 +107,11 @@ public class Sitio extends javax.swing.JFrame {
         });
         perfil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        foto.setOpaque(true);
-        perfil.add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 50));
-
         nUsuario.setForeground(new java.awt.Color(255, 255, 255));
         nUsuario.setText("USUARIO");
-        perfil.add(nUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        perfil.add(nUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, -1));
+
+        superior.add(perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(1057, 0, 160, 50));
 
         hombeBtn.setOpaque(false);
         hombeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -117,8 +122,6 @@ public class Sitio extends javax.swing.JFrame {
                 hombeBtnMouseExited(evt);
             }
         });
-
-        homeL.setIcon(new javax.swing.ImageIcon("D:\\Universidad\\2022 primer Semestre\\Taller de Progra\\DeCaseritos\\src\\main\\java\\Imagenes\\homeLN.png")); // NOI18N
 
         javax.swing.GroupLayout hombeBtnLayout = new javax.swing.GroupLayout(hombeBtn);
         hombeBtn.setLayout(hombeBtnLayout);
@@ -138,6 +141,8 @@ public class Sitio extends javax.swing.JFrame {
                 .addComponent(homeL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        superior.add(hombeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, -1, -1));
+
         menuBtn.setOpaque(false);
         menuBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -151,49 +156,23 @@ public class Sitio extends javax.swing.JFrame {
             }
         });
 
-        menuL.setIcon(new javax.swing.ImageIcon("D:\\Universidad\\2022 primer Semestre\\Taller de Progra\\DeCaseritos\\src\\main\\java\\Imagenes\\menuD.png")); // NOI18N
-
         javax.swing.GroupLayout menuBtnLayout = new javax.swing.GroupLayout(menuBtn);
         menuBtn.setLayout(menuBtnLayout);
         menuBtnLayout.setHorizontalGroup(
             menuBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuBtnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(menuL)
-                .addContainerGap())
+            .addGroup(menuBtnLayout.createSequentialGroup()
+                .addComponent(menuL, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         menuBtnLayout.setVerticalGroup(
             menuBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(menuL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout superiorLayout = new javax.swing.GroupLayout(superior);
-        superior.setLayout(superiorLayout);
-        superiorLayout.setHorizontalGroup(
-            superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, superiorLayout.createSequentialGroup()
-                .addComponent(logotipo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 896, Short.MAX_VALUE)
-                .addComponent(hombeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(menuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        superiorLayout.setVerticalGroup(
-            superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(superiorLayout.createSequentialGroup()
-                .addGroup(superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logotipo)
-                    .addComponent(hombeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(superiorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(menuBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        superior.add(menuBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1222, 0, 60, 50));
+
+        foto.setOpaque(true);
+        superior.add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 0, 60, 50));
 
         base.add(superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 50));
 
@@ -319,28 +298,28 @@ public class Sitio extends javax.swing.JFrame {
 
     private void hombeBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hombeBtnMouseEntered
         
-        homeL.setIcon(new ImageIcon("src/main/java/Imagenes/homeLW.png"));
+        homeL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/homeLW.png"));
     }//GEN-LAST:event_hombeBtnMouseEntered
 
     private void hombeBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hombeBtnMouseExited
-        homeL.setIcon(new ImageIcon("src/main/java/Imagenes/homeLN.png"));
+        homeL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/homeLN.png"));
     }//GEN-LAST:event_hombeBtnMouseExited
 
     private void menuBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuBtnMouseEntered
         if(desplegado == false){
-            menuL.setIcon(new ImageIcon("src/main/java/Imagenes/menuDY.png"));
+            menuL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/menuDY.png"));
         }else{
             
-            menuL.setIcon(new ImageIcon("src/main/java/Imagenes/menuUY.png"));
+            menuL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/menuUY.png"));
         }
     }//GEN-LAST:event_menuBtnMouseEntered
 
     private void menuBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuBtnMouseExited
         if(desplegado == false){
-            menuL.setIcon(new ImageIcon("src/main/java/Imagenes/menuD.png"));
+            menuL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/menuD.png"));
         }else{
             
-            menuL.setIcon(new ImageIcon("src/main/java/Imagenes/menuU.png"));
+            menuL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/menuU.png"));
         }
     }//GEN-LAST:event_menuBtnMouseExited
 
@@ -348,11 +327,11 @@ public class Sitio extends javax.swing.JFrame {
         if(desplegado == false){
             menuBar.setVisible(true);
             this.desplegado = true;
-            menuL.setIcon(new ImageIcon("src/main/java/Imagenes/menuU.png"));
+            menuL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/menuU.png"));
         }else{
             menuBar.setVisible(false);
             this.desplegado = false;
-            menuL.setIcon(new ImageIcon("src/main/java/Imagenes/menuD.png"));
+            menuL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/menuD.png"));
         }
     }//GEN-LAST:event_menuBtnMouseClicked
 
@@ -414,11 +393,12 @@ public class Sitio extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        ListaDE<Cuenta> cuentas = new ListaDE<Cuenta>(); 
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Sitio().setVisible(true);
+            new Sitio(cuentas).setVisible(true);    
             }
         });
     }
