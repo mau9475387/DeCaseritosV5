@@ -170,7 +170,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(contraseñaLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 350, 40));
 
         emailLbl.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
-        emailLbl.setText("E-mail :");
+        emailLbl.setText("Usuario:");
         jPanel1.add(emailLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 350, 40));
 
         jSeparator1.setBackground(new java.awt.Color(204, 204, 204));
@@ -472,7 +472,7 @@ public void leerComensales(){
 public boolean verificarCuenta(String usuario,String pass){
     boolean res=false;
     
-    for(int i=0;i<cuentas.tamaño()-1 && res !=true;i++){
+    for(int i=0;i<cuentas.tamaño() && res !=true;i++){
         if(cuentas.obtenerPos(i).getUsuario().equals(usuario)){
             usuarioExiste = true;
         }
