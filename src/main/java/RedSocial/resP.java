@@ -11,12 +11,17 @@ import java.awt.Color;
  * @author Mau
  */
 public class resP extends javax.swing.JPanel {
-
-    /**
-     * Creates new form resP
-     */
+    Color naranjaSuave;
+    Color naranja;
+    Error arturo;
+    
     public resP() {
         initComponents();
+        naranja = new Color(247,87,26);
+        naranjaSuave = new Color(250,183,44);
+        crearBtn.setBackground(naranja);
+        crearLbl.setForeground(Color.white);
+        arturo = new Error();
     }
 
     /**
@@ -71,27 +76,36 @@ public class resP extends javax.swing.JPanel {
         celularL = new javax.swing.JLabel();
         fotoL = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        foto = new javax.swing.JPanel();
+        crearBtn = new javax.swing.JPanel();
+        crearLbl = new javax.swing.JLabel();
 
         setOpaque(false);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nombreL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         nombreL.setText("Nombre");
+        add(nombreL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         usuarioL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         usuarioL.setText("Nombre de usuario:");
+        add(usuarioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         contraseñaL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         contraseñaL.setText("Contraseña:");
+        add(contraseñaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
         mailL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         mailL.setText("E-mail:");
+        add(mailL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
         pass2L.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         pass2L.setText("Repita la contraseña:");
+        add(pass2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         mail2L.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         mail2L.setText("repita su E-mail:");
+        add(mail2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         datosP.setOpaque(false);
 
@@ -382,7 +396,6 @@ public class resP extends javax.swing.JPanel {
                     .addComponent(especialidadText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(datosPLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -395,88 +408,53 @@ public class resP extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
+        add(datosP, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
+
         celularL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         celularL.setText("Numero de celular:");
+        add(celularL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
         fotoL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         fotoL.setText("Foto de perfil:");
+        add(fotoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setText("CREAR CUENTA DE TIPO RESTAURANTE");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 376, 23));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout fotoLayout = new javax.swing.GroupLayout(foto);
+        foto.setLayout(fotoLayout);
+        fotoLayout.setHorizontalGroup(
+            fotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        fotoLayout.setVerticalGroup(
+            fotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(usuarioL)
-                                        .addComponent(nombreL, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(mailL)
-                                    .addComponent(mail2L)
-                                    .addComponent(contraseñaL)
-                                    .addComponent(celularL)
-                                    .addComponent(fotoL))
-                                .addGap(28, 28, 28))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(pass2L)
-                                .addGap(18, 18, 18))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addComponent(datosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(182, 182, 182))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(datosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(nombreL)
-                        .addGap(30, 30, 30)
-                        .addComponent(usuarioL)
-                        .addGap(18, 18, 18)
-                        .addComponent(mailL)
-                        .addGap(24, 24, 24)
-                        .addComponent(mail2L)
-                        .addGap(24, 24, 24)
-                        .addComponent(contraseñaL)
-                        .addGap(24, 24, 24)
-                        .addComponent(pass2L)
-                        .addGap(24, 24, 24)
-                        .addComponent(celularL)
-                        .addGap(35, 35, 35)
-                        .addComponent(fotoL)
-                        .addGap(27, 27, 27)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
+
+        crearBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                crearBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                crearBtnMouseExited(evt);
+            }
+        });
+        crearBtn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        crearLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        crearLbl.setText("Crear cuenta");
+        crearBtn.add(crearLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 40));
+
+        add(crearBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 650, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void nombreTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreTextMousePressed
@@ -519,6 +497,29 @@ public class resP extends javax.swing.JPanel {
         defecto("dirText");
     }//GEN-LAST:event_dirTextMousePressed
 
+    private void crearBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearBtnMouseEntered
+        crearBtn.setBackground(naranjaSuave);
+        
+    }//GEN-LAST:event_crearBtnMouseEntered
+
+    private void crearBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearBtnMouseExited
+        crearBtn.setBackground(naranja);
+        
+    }//GEN-LAST:event_crearBtnMouseExited
+
+    private void crearBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearBtnMouseClicked
+        if(wifi.getState()== true){
+        arturo.cambiarTitulo("creación de cuenta exitosa");
+        arturo.cambiarMensaje("se ha creado una cuenta y wifi esta marcado");
+        arturo.setVisible(true);
+        }else{
+         arturo.cambiarTitulo("creación de cuenta exitosa");
+           arturo.cambiarMensaje("se ha creado una cuenta ");
+        arturo.setVisible(true);   
+        }
+        
+    }//GEN-LAST:event_crearBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane atencion;
@@ -528,6 +529,8 @@ public class resP extends javax.swing.JPanel {
     private javax.swing.JLabel celularL;
     private javax.swing.JTextField celularText;
     private javax.swing.JLabel contraseñaL;
+    private javax.swing.JPanel crearBtn;
+    private javax.swing.JLabel crearLbl;
     private javax.swing.JPanel datosP;
     private java.awt.Checkbox delivery;
     private javax.swing.JLabel diasYHorasL;
@@ -536,11 +539,11 @@ public class resP extends javax.swing.JPanel {
     private java.awt.Checkbox drive;
     private javax.swing.JLabel especialidadL;
     private javax.swing.JTextField especialidadText;
+    private javax.swing.JPanel foto;
     private javax.swing.JLabel fotoL;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
