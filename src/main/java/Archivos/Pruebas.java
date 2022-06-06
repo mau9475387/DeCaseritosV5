@@ -15,8 +15,12 @@ public class Pruebas {
         Ficheros prueba = new Ficheros();
         Comensal com1= new Comensal("mauricio Almendras","mau97","dog","mau94@gmail.com");
         prueba.crearComensal(com1);
-        Comensal com2 = prueba.leerComensal("mauricio Almendras");
-        System.out.println(com2.toString());
+        Comensal com2 = new Comensal("santos","santos97","dog2","santos@gmail.com");
+        prueba.crearComensal(com2);
+        Comensal com3 = new Comensal("hector","hector1","bncms","hector1@gmail.com");
+        prueba.crearComensal(com3);
+        Comensal com4 = new Comensal("juancho","juan97","dog3","juancho@gmail.com");
+        prueba.crearComensal(com4);
     }
     
 }

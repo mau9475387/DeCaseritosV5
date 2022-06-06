@@ -5,10 +5,22 @@
 package RedSocial;
 
 
+import Cuentas.Cuenta;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import Archivos.Ficheros;
+import Cuentas.Comensal;
+import EDL.ListaDE;
+
+
 
 /**
  *
@@ -16,18 +28,28 @@ import javax.swing.ImageIcon;
  */
 
 public class Login extends javax.swing.JFrame {
-int xMouse,yMouse;//posicion del mouse en la pantalla
-    /**
-     * Creates new form Login
-     */
+    
+    int xMouse,yMouse;//posicion del mouse en la pantalla
+    Error error;
+    Error impresiones;
+    Ficheros ficheros;
+    ListaDE<Cuenta> cuentas;
     public Login() {
         initComponents();
         setLocationRelativeTo(null);//fija la ventana de login al centro de la pantalla
         ingresarBtn.setBackground(new Color(242,242,242));
         crearCuentaBtn.setBackground(new Color(242,242,242));
-        ImageIcon imagen = new ImageIcon("src\\main\\java\\recursos\\imagenes\\RICK Y MORTY.png");
+        error = new Error();
+        ficheros = new Ficheros();
+        ImageIcon imagen = new ImageIcon("src\\main\\java\\recursos\\imagenes\\fondoLogin.png");
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(imagenLogin.getWidth(), imagenLogin.getHeight(),Image.SCALE_DEFAULT));
         imagenLogin.setIcon(icono);
+        cuentas = new ListaDE<Cuenta>();
+        leerComensales();
+        impresiones = new Error();
+        impresiones.cambiarTitulo("Lista de cuentas");
+        impresiones.cambiarMensaje(cuentas.toString());
+        impresiones.setVisible(true);
     }
 
     /**
@@ -52,7 +74,7 @@ int xMouse,yMouse;//posicion del mouse en la pantalla
         jSeparator2 = new javax.swing.JSeparator();
         userText = new javax.swing.JTextField();
         passText = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
+        iniciarSesionLbl = new javax.swing.JLabel();
         ingresarBtn = new javax.swing.JPanel();
         ingresarLabel = new javax.swing.JLabel();
         crearCuentaBtn = new javax.swing.JPanel();
@@ -181,9 +203,9 @@ int xMouse,yMouse;//posicion del mouse en la pantalla
         });
         jPanel1.add(passText, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 400, 30));
 
-        jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 48)); // NOI18N
-        jLabel1.setText("Iniciar sesión");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 380, 70));
+        iniciarSesionLbl.setFont(new java.awt.Font("Roboto Medium", 0, 48)); // NOI18N
+        iniciarSesionLbl.setText("Iniciar sesión");
+        jPanel1.add(iniciarSesionLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 380, 70));
 
         ingresarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ingresarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -405,7 +427,7 @@ int xMouse,yMouse;//posicion del mouse en la pantalla
     private javax.swing.JLabel imagenLogin;
     private javax.swing.JPanel ingresarBtn;
     private javax.swing.JLabel ingresarLabel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel iniciarSesionLbl;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -413,4 +435,19 @@ int xMouse,yMouse;//posicion del mouse en la pantalla
     private javax.swing.JLabel slogan;
     private javax.swing.JTextField userText;
     // End of variables declaration//GEN-END:variables
+
+/**lee cada uno de los archivos de la carpeta comensales y los añade como objetos de tipo comensal
+ a la lista cuentas*/    
+public void leerComensales(){
+    String directorio = "src\\main\\java\\recursos\\Cuentas\\Comensales";
+        try(DirectoryStream<Path> ds = Files.newDirectoryStream(Paths.get(directorio))){
+            for(Path ruta : ds){
+                Comensal c = ficheros.leerComensal(""+ruta.getFileName());
+                cuentas.add(c);
+            }
+        }catch(IOException e){
+            error.cambiarTitulo("IO exception e");
+            error.cambiarMensaje(""+e.getMessage());
+        }
+}
 }

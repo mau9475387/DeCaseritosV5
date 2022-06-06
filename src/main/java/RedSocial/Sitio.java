@@ -23,6 +23,7 @@ public class Sitio extends javax.swing.JFrame {
     Color naranjaS= new Color(250,183,44);
     Color gris = new Color(242,242,242);
     boolean desplegado = false;
+    
     /**
      * Creates new form Sitio
      */

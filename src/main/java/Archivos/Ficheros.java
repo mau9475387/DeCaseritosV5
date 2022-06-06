@@ -25,11 +25,11 @@ public class Ficheros {
         try{
             FileWriter fw = null;
             BufferedWriter bw = null;
-            String nombre = com.getNombre();
-            String dir = "src\\main\\java\\recursos\\Cuentas\\Comensales\\" + nombre;
+            String correo = com.getEmail();
+            String dir = "src\\main\\java\\recursos\\Cuentas\\Comensales\\" + correo;
             File d = new File(dir);
                 if(d.mkdirs()){
-                File f = new File(dir+"\\"+nombre+".txt");
+                File f = new File(dir+"\\"+correo+".txt");
                 String dir2 = dir + "\\publicaciones";
                 File e = new File (dir2);
                 e.mkdir();
@@ -53,12 +53,12 @@ public class Ficheros {
         }
     }
     
-    public Comensal leerComensal(String nombre){
+    public Comensal leerComensal(String mail){
         Comensal res = null;
         try{
-            File f = new File("src\\main\\java\\recursos\\Cuentas\\Comensales\\" + nombre);
+            File f = new File("src\\main\\java\\recursos\\Cuentas\\Comensales\\" + mail);
                 if (f.exists()){
-                    FileReader fr = new FileReader(f+"\\"+nombre+".txt");
+                    FileReader fr = new FileReader(f+"\\"+mail+".txt");
                     BufferedReader br = new BufferedReader(fr);
                     String linea=br.readLine();
                     String[] com = linea.split("-");

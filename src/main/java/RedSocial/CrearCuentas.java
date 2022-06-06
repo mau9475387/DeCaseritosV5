@@ -54,10 +54,6 @@ public class CrearCuentas extends javax.swing.JFrame {
         restBtn = new javax.swing.JPanel();
         restL = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
-        crearBtn = new javax.swing.JPanel();
-        crearL = new javax.swing.JLabel();
-        cancelarBtn = new javax.swing.JPanel();
-        cancelarL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -219,93 +215,15 @@ public class CrearCuentas extends javax.swing.JFrame {
 
         content.setOpaque(false);
 
-        crearBtn.setBackground(new Color(242,242,242));
-        crearBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        crearBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                crearBtnMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                crearBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                crearBtnMouseExited(evt);
-            }
-        });
-
-        crearL.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        crearL.setText("Crear");
-
-        javax.swing.GroupLayout crearBtnLayout = new javax.swing.GroupLayout(crearBtn);
-        crearBtn.setLayout(crearBtnLayout);
-        crearBtnLayout.setHorizontalGroup(
-            crearBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(crearBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(crearL)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        crearBtnLayout.setVerticalGroup(
-            crearBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(crearBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(crearL)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
-        cancelarBtn.setBackground(new Color(242,242,242));
-        cancelarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cancelarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cancelarBtnMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cancelarBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                cancelarBtnMouseExited(evt);
-            }
-        });
-
-        cancelarL.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        cancelarL.setText("Cancelar");
-
-        javax.swing.GroupLayout cancelarBtnLayout = new javax.swing.GroupLayout(cancelarBtn);
-        cancelarBtn.setLayout(cancelarBtnLayout);
-        cancelarBtnLayout.setHorizontalGroup(
-            cancelarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cancelarBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cancelarL)
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-        cancelarBtnLayout.setVerticalGroup(
-            cancelarBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cancelarBtnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cancelarL)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contentLayout.createSequentialGroup()
-                .addContainerGap(281, Short.MAX_VALUE)
-                .addComponent(crearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(cancelarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(279, 279, 279))
+            .addGap(0, 790, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contentLayout.createSequentialGroup()
-                .addContainerGap(669, Short.MAX_VALUE)
-                .addGroup(contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(crearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
+            .addGap(0, 740, Short.MAX_VALUE)
         );
 
         Fondo.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 790, 740));
@@ -350,40 +268,6 @@ public class CrearCuentas extends javax.swing.JFrame {
         nuevo.setVisible(true);
         dispose();
     }//GEN-LAST:event_atrasBtnMouseClicked
-
-    private void cancelarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarBtnMouseClicked
-        Login nuevo = new Login();
-        nuevo.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_cancelarBtnMouseClicked
-
-    private void crearBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearBtnMouseClicked
-        
-        
-        Login nuevo = new Login();
-        nuevo.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_crearBtnMouseClicked
-
-    private void crearBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearBtnMouseEntered
-        crearBtn.setBackground(new Color(247,87,26));
-        crearL.setForeground(Color.white);
-    }//GEN-LAST:event_crearBtnMouseEntered
-
-    private void crearBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearBtnMouseExited
-        crearBtn.setBackground(new Color(242,242,242));
-        crearL.setForeground(Color.black);
-    }//GEN-LAST:event_crearBtnMouseExited
-
-    private void cancelarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarBtnMouseEntered
-        cancelarBtn.setBackground(new Color(247,87,26));
-        cancelarL.setForeground(Color.white);
-    }//GEN-LAST:event_cancelarBtnMouseEntered
-
-    private void cancelarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarBtnMouseExited
-        cancelarBtn.setBackground(new Color(242,242,242));
-        cancelarL.setForeground(Color.black);
-    }//GEN-LAST:event_cancelarBtnMouseExited
 
     private void comBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comBtnMouseClicked
         if(actual == 2){
@@ -443,13 +327,9 @@ public class CrearCuentas extends javax.swing.JFrame {
     private javax.swing.JPanel Fondo;
     private javax.swing.JPanel atrasBtn;
     private javax.swing.JLabel atrasText;
-    private javax.swing.JPanel cancelarBtn;
-    private javax.swing.JLabel cancelarL;
     private javax.swing.JPanel comBtn;
     private javax.swing.JLabel comL;
     private javax.swing.JPanel content;
-    private javax.swing.JPanel crearBtn;
-    private javax.swing.JLabel crearL;
     private javax.swing.JPanel lateral;
     private javax.swing.JPanel restBtn;
     private javax.swing.JLabel restL;
@@ -457,7 +337,7 @@ public class CrearCuentas extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     
     private void ShowPanel(JPanel p){
-        p.setSize(790,630);
+        p.setSize(790,740);
         p.setLocation(0,0);
         
         content.removeAll();

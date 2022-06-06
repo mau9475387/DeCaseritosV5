@@ -60,10 +60,12 @@ public class Error extends javax.swing.JFrame {
                 superiorMousePressed(evt);
             }
         });
+        superior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         errorLbl.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         errorLbl.setForeground(new java.awt.Color(255, 255, 255));
         errorLbl.setText("Error");
+        superior.add(errorLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 0, 254, 30));
 
         exitBtn.setBackground(new Color(247,87,26));
         exitBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -92,21 +94,7 @@ public class Error extends javax.swing.JFrame {
             .addComponent(exitLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout superiorLayout = new javax.swing.GroupLayout(superior);
-        superior.setLayout(superiorLayout);
-        superiorLayout.setHorizontalGroup(
-            superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(superiorLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(errorLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 422, Short.MAX_VALUE)
-                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        superiorLayout.setVerticalGroup(
-            superiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(errorLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        superior.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(487, 0, -1, -1));
 
         fondo.add(superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 30));
 
@@ -121,6 +109,9 @@ public class Error extends javax.swing.JFrame {
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 cerrarBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cerrarBtnMouseExited(evt);
             }
         });
 
@@ -142,6 +133,7 @@ public class Error extends javax.swing.JFrame {
         );
 
         mensajeLbl.setText("mensaje de error");
+        mensajeLbl.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout fondoBlancoLayout = new javax.swing.GroupLayout(fondoBlanco);
         fondoBlanco.setLayout(fondoBlancoLayout);
@@ -151,17 +143,17 @@ public class Error extends javax.swing.JFrame {
                 .addContainerGap(371, Short.MAX_VALUE)
                 .addComponent(cerrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
-            .addGroup(fondoBlancoLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(mensajeLbl)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoBlancoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(mensajeLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(16, 16, 16))
         );
         fondoBlancoLayout.setVerticalGroup(
             fondoBlancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondoBlancoLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(mensajeLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(mensajeLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(cerrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
@@ -211,6 +203,11 @@ public class Error extends javax.swing.JFrame {
         exitLbl.setForeground(naranja);
     }//GEN-LAST:event_exitBtnMouseEntered
 
+    private void cerrarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarBtnMouseExited
+        exitBtn.setBackground(naranja);
+        exitLbl.setForeground(Color.white);
+    }//GEN-LAST:event_cerrarBtnMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -258,6 +255,10 @@ public class Error extends javax.swing.JFrame {
     private javax.swing.JPanel superior;
     // End of variables declaration//GEN-END:variables
 public void cambiarMensaje(String nuevo){
-    mensajeLbl.setText(nuevo);
+    mensajeLbl.setText("<html>"+nuevo+"<html>");
+}
+
+public void cambiarTitulo(String nuevoTitulo){
+   errorLbl.setText(nuevoTitulo);
 }
 }

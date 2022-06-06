@@ -21,6 +21,10 @@ public class dummy extends Error{
     silpancho.cambiarMensaje("silpancho");
     pique.setVisible(true);
     silpancho.setVisible(true);
+    
+    Error error = new Error();
+    error.cambiarMensaje("esto es una prueba");
+    error.setVisible(true);
     }
     
     
