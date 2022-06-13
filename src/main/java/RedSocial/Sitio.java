@@ -343,7 +343,8 @@ public class Sitio extends javax.swing.JFrame {
     }//GEN-LAST:event_logOutBtnMouseClicked
 
     private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
-        this.dispose();
+        System.exit(0);
+        
     }//GEN-LAST:event_exitBtnMouseClicked
 
     private void logOutBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutBtnMouseEntered

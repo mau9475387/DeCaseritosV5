@@ -381,7 +381,9 @@ public class Login extends javax.swing.JFrame {
     if(verificarCuenta(emailText.getText(),String.valueOf(passText.getPassword()))){
             Sitio l= new Sitio(cuentas);
             l.setVisible(true);
-            dispose();
+            this.dispose();
+           
+            
     }else{
         if(usuarioExiste==false && passExiste==false){
             error.cambiarMensaje("usuario y contraseña incorrectos");
