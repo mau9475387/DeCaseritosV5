@@ -73,6 +73,7 @@ public class Sitio extends javax.swing.JFrame {
         logOutL = new javax.swing.JLabel();
         exitBtn = new javax.swing.JPanel();
         exitL = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -261,6 +262,21 @@ public class Sitio extends javax.swing.JFrame {
 
         base.add(menuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 50, 140, 80));
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(950, 650));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 830, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 670, Short.MAX_VALUE)
+        );
+
+        base.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 830, 670));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -269,7 +285,7 @@ public class Sitio extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(base, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(base, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -411,6 +427,7 @@ public class Sitio extends javax.swing.JFrame {
     private javax.swing.JLabel foto;
     private javax.swing.JPanel hombeBtn;
     private javax.swing.JLabel homeL;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel logOutBtn;
     private javax.swing.JLabel logOutL;
     private javax.swing.JLabel logotipo;
