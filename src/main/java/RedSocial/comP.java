@@ -13,10 +13,11 @@ import java.awt.Color;
  */
 public class comP extends javax.swing.JPanel {
 
+    CrearCuentas frame;
     
-    public comP() {
+    public comP(CrearCuentas x) {
         initComponents();
-        
+        frame = x;
     }
 
     /**
@@ -542,7 +543,9 @@ public class comP extends javax.swing.JPanel {
     }//GEN-LAST:event_pass2TextMousePressed
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
-        
+        Login nuevo = new Login();
+        nuevo.setVisible(true);
+        frame.cerrar();
         
     }//GEN-LAST:event_jPanel2MouseClicked
 

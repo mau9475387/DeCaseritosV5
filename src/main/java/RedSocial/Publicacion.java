@@ -4,6 +4,9 @@
  */
 package RedSocial;
 
+import java.awt.Color;
+
+
 /**
  *
  * @author Mau
@@ -15,6 +18,7 @@ public class Publicacion extends javax.swing.JPanel {
      */
     public Publicacion() {
         initComponents();
+        Color naranja = new Color(247,87,26);
     }
 
     /**
@@ -26,19 +30,77 @@ public class Publicacion extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
+        fotoPerfil = new javax.swing.JPanel();
+        fotoLbl = new javax.swing.JLabel();
+        usuarioLbl = new javax.swing.JLabel();
+        descripcion = new javax.swing.JScrollPane();
+        descripcionTxt = new javax.swing.JTextArea();
+        fotoPanel = new javax.swing.JPanel();
+        Comentarios = new javax.swing.JPanel();
+
+        setBackground(Color.WHITE
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
+        setBorder(new javax.swing.border.LineBorder(new Color(247,87,26), 1, true));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        fotoPerfil.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(247,87,26)));
+        fotoPerfil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        fotoPerfil.add(fotoLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
+
+        add(fotoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, 90, 90));
+
+        usuarioLbl.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        usuarioLbl.setText("Usuario");
+        add(usuarioLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 210, 30));
+
+        descripcion.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        descripcionTxt.setEditable(false);
+        descripcionTxt.setBackground(Color.WHITE);
+        descripcionTxt.setColumns(20);
+        descripcionTxt.setLineWrap(true);
+        descripcionTxt.setRows(5);
+        descripcion.setViewportView(descripcionTxt);
+
+        add(descripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 50, 220, 60));
+
+        fotoPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+
+        javax.swing.GroupLayout fotoPanelLayout = new javax.swing.GroupLayout(fotoPanel);
+        fotoPanel.setLayout(fotoPanelLayout);
+        fotoPanelLayout.setHorizontalGroup(
+            fotoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 568, Short.MAX_VALUE)
         );
+        fotoPanelLayout.setVerticalGroup(
+            fotoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 478, Short.MAX_VALUE)
+        );
+
+        add(fotoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 570, 480));
+
+        javax.swing.GroupLayout ComentariosLayout = new javax.swing.GroupLayout(Comentarios);
+        Comentarios.setLayout(ComentariosLayout);
+        ComentariosLayout.setHorizontalGroup(
+            ComentariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 320, Short.MAX_VALUE)
+        );
+        ComentariosLayout.setVerticalGroup(
+            ComentariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 360, Short.MAX_VALUE)
+        );
+
+        add(Comentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 320, 360));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Comentarios;
+    private javax.swing.JScrollPane descripcion;
+    private javax.swing.JTextArea descripcionTxt;
+    private javax.swing.JLabel fotoLbl;
+    private javax.swing.JPanel fotoPanel;
+    private javax.swing.JPanel fotoPerfil;
+    private javax.swing.JLabel usuarioLbl;
     // End of variables declaration//GEN-END:variables
 }

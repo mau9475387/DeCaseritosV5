@@ -25,7 +25,7 @@ public class CrearCuentas extends javax.swing.JFrame {
         initComponents();
         actual = 1;
         setLocationRelativeTo(null);//fija la ventana de login al centro de la pantalla
-        comP c = new comP();//creamos una variable para el panel de crear comensal
+        comP c = new comP(this);//creamos una variable para el panel de crear comensal
         
         ShowPanel(c);//mostramos por defecto el panel de crear comensal
         
@@ -271,7 +271,7 @@ public class CrearCuentas extends javax.swing.JFrame {
 
     private void comBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comBtnMouseClicked
         if(actual == 2){
-            comP nuevo = new comP();
+            comP nuevo = new comP(this);
             actual = 1;
             ShowPanel(nuevo);
             color();
@@ -363,5 +363,9 @@ public class CrearCuentas extends javax.swing.JFrame {
             comBtn.setBackground(new Color(247,87,26));
             comL.setForeground(Color.white);
         }
+    }
+    
+    public void cerrar(){
+        dispose();
     }
 }
