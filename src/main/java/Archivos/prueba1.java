@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Archivos;
+import Cuentas.Comensal;
 
 /**
  *
@@ -10,6 +11,8 @@ package Archivos;
  */
 public class prueba1 {
     public static void main (String[] args){
-        System.out.println("adios mundo");
+        Ficheros fichas = new Ficheros();
+        fichas.crearComensal(new Comensal());
+        
     }
 }
