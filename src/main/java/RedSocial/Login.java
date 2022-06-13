@@ -379,7 +379,7 @@ public class Login extends javax.swing.JFrame {
 
     private void ingresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarBtnMouseClicked
     if(verificarCuenta(emailText.getText(),String.valueOf(passText.getPassword()))){
-            Sitio l= new Sitio(cuentas);
+            Sitio l= new Sitio(cuentas,posicion(emailText.getText()));
             l.setVisible(true);
             this.dispose();
            
@@ -488,6 +488,24 @@ public boolean verificarCuenta(String usuario,String pass){
      }
     return res;
     }
+
+/**devuelve la posicion del usuario en la lista*/
+public int posicion(String usuario){
+    boolean existe = false;
+    int res=0;
     
+    for(int i=0;i<cuentas.tamaño() && existe !=true;i++){
+        res++;
+        if(cuentas.obtenerPos(i).getUsuario().equals(usuario)){
+            existe = true;
+        
+        
+        }
+   
+     } 
+    return res-1;
+    
+ }
 }
+
 
