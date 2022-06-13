@@ -105,6 +105,8 @@ public class ListaDE<E> {
         return obtenerPos(pos-1,x.getSig());
     }
     
+    
+    
     /**Elimina un elemento de la lista, dada su posición*/
     public E eliminarPos(int pos){
         if(pos==0)  return eliminarInicio(); //si pos es 0, se elimina el primer elemento de la lista.
@@ -133,6 +135,8 @@ public class ListaDE<E> {
         }
         return x !=null;
     }
+    
+    
     
     
     

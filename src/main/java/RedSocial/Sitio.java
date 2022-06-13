@@ -26,12 +26,14 @@ public class Sitio extends javax.swing.JFrame {
     Color gris = new Color(242,242,242);
     boolean desplegado = false;
     ListaDE<Cuenta> cuentas;
+    int x=0;
     
     /**
      * Creates new form Sitio
      */
-    public Sitio(ListaDE<Cuenta> acc) {
+    public Sitio(ListaDE<Cuenta> acc,int num) {
         initComponents();
+        x=num;
         setLocationRelativeTo(null);
         menuBar.setVisible(false);
         homeL.setIcon(new ImageIcon("src/main/java/recursos/imagenes/homeLN.png"));
@@ -47,6 +49,7 @@ public class Sitio extends javax.swing.JFrame {
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(foto.getWidth(), foto.getHeight(),Image.SCALE_DEFAULT));
         foto.setIcon(icono);
         this.repaint();
+        setNUsuario();
     }
 
     /**
@@ -411,11 +414,12 @@ public class Sitio extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         ListaDE<Cuenta> cuentas = new ListaDE<Cuenta>(); 
-        
+        int num=0;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            new Sitio(cuentas).setVisible(true);    
+            new Sitio(cuentas, num).setVisible(true); 
+            
             }
         });
     }
@@ -439,5 +443,8 @@ public class Sitio extends javax.swing.JFrame {
     private javax.swing.JPanel superior;
     // End of variables declaration//GEN-END:variables
 
+public void setNUsuario(){
+    nUsuario.setText(cuentas.obtenerPos(x).getUsuario());
+}
     
 }
