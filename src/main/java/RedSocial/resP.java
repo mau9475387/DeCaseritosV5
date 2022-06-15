@@ -4,6 +4,8 @@
  */
 package RedSocial;
 
+import Cuentas.Comensal;
+import Cuentas.Restaurante;
 import java.awt.Color;
 
 /**
@@ -11,17 +13,22 @@ import java.awt.Color;
  * @author Mau
  */
 public class resP extends javax.swing.JPanel {
+
     Color naranjaSuave;
     Color naranja;
-    Error arturo;
-    
+    CrearCuentas frame;
+
     public resP() {
         initComponents();
-        naranja = new Color(247,87,26);
-        naranjaSuave = new Color(250,183,44);
+        naranja = new Color(247, 87, 26);
+        naranjaSuave = new Color(250, 183, 44);
         crearBtn.setBackground(naranja);
         crearLbl.setForeground(Color.white);
-        arturo = new Error();
+        cancelarbtn.setBackground(naranja);
+        cancelarlbl.setForeground(Color.white);
+        CrearCuentas x = null;
+
+        frame = x;
     }
 
     /**
@@ -40,13 +47,6 @@ public class resP extends javax.swing.JPanel {
         pass2L = new javax.swing.JLabel();
         mail2L = new javax.swing.JLabel();
         datosP = new javax.swing.JPanel();
-        jSeparator8 = new javax.swing.JSeparator();
-        jSeparator9 = new javax.swing.JSeparator();
-        jSeparator10 = new javax.swing.JSeparator();
-        jSeparator11 = new javax.swing.JSeparator();
-        jSeparator12 = new javax.swing.JSeparator();
-        jSeparator13 = new javax.swing.JSeparator();
-        jSeparator14 = new javax.swing.JSeparator();
         nombreText = new javax.swing.JTextField();
         usuarioText = new javax.swing.JTextField();
         mailText = new javax.swing.JTextField();
@@ -56,22 +56,14 @@ public class resP extends javax.swing.JPanel {
         pass2Text = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         wifi = new java.awt.Checkbox();
-        recreacion = new java.awt.Checkbox();
-        zNiños = new java.awt.Checkbox();
-        braile = new java.awt.Checkbox();
-        discapacitados = new java.awt.Checkbox();
-        sordoMudos = new java.awt.Checkbox();
-        drive = new java.awt.Checkbox();
-        autoServ = new java.awt.Checkbox();
+        zniños = new java.awt.Checkbox();
         delivery = new java.awt.Checkbox();
         diasYHorasL = new javax.swing.JLabel();
         especialidadL = new javax.swing.JLabel();
         atencion = new javax.swing.JScrollPane();
         atencionText = new javax.swing.JTextArea();
         especialidadText = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
         dirText = new javax.swing.JTextField();
         celularL = new javax.swing.JLabel();
         fotoL = new javax.swing.JLabel();
@@ -79,35 +71,38 @@ public class resP extends javax.swing.JPanel {
         foto = new javax.swing.JPanel();
         crearBtn = new javax.swing.JPanel();
         crearLbl = new javax.swing.JLabel();
+        cancelarbtn = new javax.swing.JPanel();
+        cancelarlbl = new javax.swing.JLabel();
 
         setOpaque(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nombreL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         nombreL.setText("Nombre");
-        add(nombreL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        add(nombreL, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, 30));
 
         usuarioL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         usuarioL.setText("Nombre de usuario:");
-        add(usuarioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        add(usuarioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, 30));
 
         contraseñaL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         contraseñaL.setText("Contraseña:");
-        add(contraseñaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        add(contraseñaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, 30));
 
         mailL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         mailL.setText("E-mail:");
-        add(mailL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        add(mailL, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, 20));
 
         pass2L.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         pass2L.setText("Repita la contraseña:");
-        add(pass2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+        add(pass2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, 30));
 
         mail2L.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         mail2L.setText("repita su E-mail:");
-        add(mail2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        add(mail2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, 30));
 
         datosP.setOpaque(false);
+        datosP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nombreText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         nombreText.setForeground(new java.awt.Color(204, 204, 204));
@@ -118,6 +113,7 @@ public class resP extends javax.swing.JPanel {
                 nombreTextMousePressed(evt);
             }
         });
+        datosP.add(nombreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 536, 30));
 
         usuarioText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         usuarioText.setForeground(new java.awt.Color(204, 204, 204));
@@ -128,6 +124,7 @@ public class resP extends javax.swing.JPanel {
                 usuarioTextMousePressed(evt);
             }
         });
+        datosP.add(usuarioText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 536, 28));
 
         mailText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         mailText.setForeground(new java.awt.Color(204, 204, 204));
@@ -138,6 +135,7 @@ public class resP extends javax.swing.JPanel {
                 mailTextMousePressed(evt);
             }
         });
+        datosP.add(mailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 536, 27));
 
         mail2Text.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         mail2Text.setForeground(new java.awt.Color(204, 204, 204));
@@ -148,6 +146,7 @@ public class resP extends javax.swing.JPanel {
                 mail2TextMousePressed(evt);
             }
         });
+        datosP.add(mail2Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 536, 29));
 
         celularText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         celularText.setForeground(new java.awt.Color(204, 204, 204));
@@ -158,6 +157,7 @@ public class resP extends javax.swing.JPanel {
                 celularTextMousePressed(evt);
             }
         });
+        datosP.add(celularText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 536, 35));
 
         passText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         passText.setForeground(new java.awt.Color(204, 204, 204));
@@ -168,6 +168,7 @@ public class resP extends javax.swing.JPanel {
                 passTextMousePressed(evt);
             }
         });
+        datosP.add(passText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 536, 30));
 
         pass2Text.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         pass2Text.setForeground(new java.awt.Color(204, 204, 204));
@@ -178,49 +179,32 @@ public class resP extends javax.swing.JPanel {
                 pass2TextMousePressed(evt);
             }
         });
+        datosP.add(pass2Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 536, 28));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel8.setText("Características que pueda presentar su restaurante");
+        datosP.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
 
         wifi.setBackground(new java.awt.Color(255, 255, 255));
         wifi.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         wifi.setLabel("Wi-fi");
+        datosP.add(wifi, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, -1, -1));
 
-        recreacion.setBackground(new java.awt.Color(255, 255, 255));
-        recreacion.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        recreacion.setLabel("Zonas de recreación");
-
-        zNiños.setBackground(new java.awt.Color(255, 255, 255));
-        zNiños.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        zNiños.setLabel("Zona para niños");
-
-        braile.setBackground(new java.awt.Color(255, 255, 255));
-        braile.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        braile.setLabel("Menú en braile");
-
-        discapacitados.setBackground(new java.awt.Color(255, 255, 255));
-        discapacitados.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        discapacitados.setLabel("Acceso p/ discapacitados");
-
-        sordoMudos.setBackground(new java.awt.Color(255, 255, 255));
-        sordoMudos.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        sordoMudos.setLabel("Mesero p/ sordomudos");
-
-        drive.setBackground(new java.awt.Color(255, 255, 255));
-        drive.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        drive.setLabel("Drive through");
-
-        autoServ.setBackground(new java.awt.Color(255, 255, 255));
-        autoServ.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        autoServ.setLabel("Auto-servicio");
+        zniños.setBackground(new java.awt.Color(255, 255, 255));
+        zniños.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        zniños.setLabel("Zona para niños");
+        datosP.add(zniños, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
 
         delivery.setBackground(new java.awt.Color(255, 255, 255));
         delivery.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         delivery.setLabel("Delivery");
+        datosP.add(delivery, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, -1));
 
         diasYHorasL.setText("Días y horario de atención:");
+        datosP.add(diasYHorasL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
 
         especialidadL.setText("Especialidad de la casa:");
+        datosP.add(especialidadL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, -1, -1));
 
         atencion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         atencion.setForeground(new java.awt.Color(204, 204, 204));
@@ -241,6 +225,8 @@ public class resP extends javax.swing.JPanel {
         });
         atencion.setViewportView(atencionText);
 
+        datosP.add(atencion, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 440, 340, 47));
+
         especialidadText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         especialidadText.setForeground(new java.awt.Color(204, 204, 204));
         especialidadText.setText("Escriba el platillo por el que se caracteriza");
@@ -250,8 +236,10 @@ public class resP extends javax.swing.JPanel {
                 especialidadTextMousePressed(evt);
             }
         });
+        datosP.add(especialidadText, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 350, -1));
 
         jLabel2.setText("Direccion:");
+        datosP.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, -1, -1));
 
         dirText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         dirText.setForeground(new java.awt.Color(204, 204, 204));
@@ -262,161 +250,17 @@ public class resP extends javax.swing.JPanel {
                 dirTextMousePressed(evt);
             }
         });
-
-        javax.swing.GroupLayout datosPLayout = new javax.swing.GroupLayout(datosP);
-        datosP.setLayout(datosPLayout);
-        datosPLayout.setHorizontalGroup(
-            datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(datosPLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosPLayout.createSequentialGroup()
-                .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(datosPLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(nombreText, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(usuarioText, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mailText, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mail2Text, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(passText, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(celularText, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, datosPLayout.createSequentialGroup()
-                        .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(pass2Text))
-                .addGap(34, 34, 34))
-            .addGroup(datosPLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(datosPLayout.createSequentialGroup()
-                        .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(zNiños, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(recreacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(wifi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(diasYHorasL))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(datosPLayout.createSequentialGroup()
-                                .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(braile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sordoMudos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(discapacitados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(drive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(delivery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(autoServ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(datosPLayout.createSequentialGroup()
-                                .addComponent(atencion)
-                                .addGap(34, 34, 34))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosPLayout.createSequentialGroup()
-                        .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(datosPLayout.createSequentialGroup()
-                                .addComponent(especialidadL)
-                                .addGap(18, 18, 18)
-                                .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator1)
-                                    .addComponent(especialidadText)))
-                            .addGroup(datosPLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator2)
-                                    .addComponent(dirText))))
-                        .addGap(34, 34, 34))))
-        );
-        datosPLayout.setVerticalGroup(
-            datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(datosPLayout.createSequentialGroup()
-                .addComponent(nombreText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(usuarioText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(mail2Text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pass2Text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(celularText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(datosPLayout.createSequentialGroup()
-                            .addComponent(wifi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(recreacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(zNiños, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(datosPLayout.createSequentialGroup()
-                            .addComponent(discapacitados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(sordoMudos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(braile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(datosPLayout.createSequentialGroup()
-                        .addComponent(autoServ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(delivery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(drive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(25, 25, 25)
-                .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(atencion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(diasYHorasL))
-                .addGap(21, 21, 21)
-                .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(especialidadL)
-                    .addComponent(especialidadText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(datosPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(datosPLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosPLayout.createSequentialGroup()
-                        .addComponent(dirText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
+        datosP.add(dirText, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 550, 430, -1));
 
         add(datosP, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
 
         celularL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         celularL.setText("Numero de celular:");
-        add(celularL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+        add(celularL, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, -1, 30));
 
         fotoL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         fotoL.setText("Foto de perfil:");
-        add(fotoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
+        add(fotoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setText("CREAR CUENTA DE TIPO RESTAURANTE");
@@ -435,7 +279,7 @@ public class resP extends javax.swing.JPanel {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
+        add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, -1, -1));
 
         crearBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -452,9 +296,43 @@ public class resP extends javax.swing.JPanel {
 
         crearLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         crearLbl.setText("Crear cuenta");
+        crearLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearLblMouseClicked(evt);
+            }
+        });
         crearBtn.add(crearLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 40));
 
-        add(crearBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 650, 120, 40));
+        add(crearBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 670, 120, 40));
+
+        cancelarbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelarbtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cancelarbtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cancelarbtnMouseExited(evt);
+            }
+        });
+
+        cancelarlbl.setForeground(new java.awt.Color(255, 255, 255));
+        cancelarlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cancelarlbl.setText("Cancelar");
+
+        javax.swing.GroupLayout cancelarbtnLayout = new javax.swing.GroupLayout(cancelarbtn);
+        cancelarbtn.setLayout(cancelarbtnLayout);
+        cancelarbtnLayout.setHorizontalGroup(
+            cancelarbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cancelarlbl, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        );
+        cancelarbtnLayout.setVerticalGroup(
+            cancelarbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cancelarlbl, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        add(cancelarbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 670, 120, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void nombreTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreTextMousePressed
@@ -466,11 +344,11 @@ public class resP extends javax.swing.JPanel {
     }//GEN-LAST:event_usuarioTextMousePressed
 
     private void mailTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mailTextMousePressed
-       defecto("mailText");
+        defecto("mailText");
     }//GEN-LAST:event_mailTextMousePressed
 
     private void mail2TextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mail2TextMousePressed
-       defecto("mail2Text");
+        defecto("mail2Text");
     }//GEN-LAST:event_mail2TextMousePressed
 
     private void passTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passTextMousePressed
@@ -499,33 +377,44 @@ public class resP extends javax.swing.JPanel {
 
     private void crearBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearBtnMouseEntered
         crearBtn.setBackground(naranjaSuave);
-        
+
     }//GEN-LAST:event_crearBtnMouseEntered
 
     private void crearBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearBtnMouseExited
         crearBtn.setBackground(naranja);
-        
+
     }//GEN-LAST:event_crearBtnMouseExited
 
     private void crearBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearBtnMouseClicked
-        if(wifi.getState()== true){
-        arturo.cambiarTitulo("creación de cuenta exitosa");
-        arturo.cambiarMensaje("se ha creado una cuenta y wifi esta marcado");
-        arturo.setVisible(true);
-        }else{
-         arturo.cambiarTitulo("creación de cuenta exitosa");
-           arturo.cambiarMensaje("se ha creado una cuenta ");
-        arturo.setVisible(true);   
-        }
-        
+        Restaurante Restaurante = new Restaurante();
+        Restaurante.crearRestaurante(new Restaurante(nombreText.getText(), usuarioText.getText(), mailText.getText(), passText.getText(), celularText.getText()));
+
     }//GEN-LAST:event_crearBtnMouseClicked
+
+    private void cancelarbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarbtnMouseEntered
+        cancelarbtn.setBackground(naranjaSuave);
+    }//GEN-LAST:event_cancelarbtnMouseEntered
+
+    private void cancelarbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarbtnMouseExited
+        cancelarbtn.setBackground(naranja);
+    }//GEN-LAST:event_cancelarbtnMouseExited
+
+    private void cancelarbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarbtnMouseClicked
+        Login nuevo = new Login();
+        nuevo.setVisible(true);
+        frame.cerrar();
+    }//GEN-LAST:event_cancelarbtnMouseClicked
+
+    private void crearLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearLblMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_crearLblMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane atencion;
     private javax.swing.JTextArea atencionText;
-    private java.awt.Checkbox autoServ;
-    private java.awt.Checkbox braile;
+    private javax.swing.JPanel cancelarbtn;
+    private javax.swing.JLabel cancelarlbl;
     private javax.swing.JLabel celularL;
     private javax.swing.JTextField celularText;
     private javax.swing.JLabel contraseñaL;
@@ -535,8 +424,6 @@ public class resP extends javax.swing.JPanel {
     private java.awt.Checkbox delivery;
     private javax.swing.JLabel diasYHorasL;
     private javax.swing.JTextField dirText;
-    private java.awt.Checkbox discapacitados;
-    private java.awt.Checkbox drive;
     private javax.swing.JLabel especialidadL;
     private javax.swing.JTextField especialidadText;
     private javax.swing.JPanel foto;
@@ -544,15 +431,6 @@ public class resP extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator12;
-    private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JSeparator jSeparator14;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel mail2L;
     private javax.swing.JTextField mail2Text;
     private javax.swing.JLabel mailL;
@@ -562,114 +440,112 @@ public class resP extends javax.swing.JPanel {
     private javax.swing.JLabel pass2L;
     private javax.swing.JPasswordField pass2Text;
     private javax.swing.JPasswordField passText;
-    private java.awt.Checkbox recreacion;
-    private java.awt.Checkbox sordoMudos;
     private javax.swing.JLabel usuarioL;
     private javax.swing.JTextField usuarioText;
     private java.awt.Checkbox wifi;
-    private java.awt.Checkbox zNiños;
+    private java.awt.Checkbox zniños;
     // End of variables declaration//GEN-END:variables
 
-    public void defecto(String l){
-        
-        if(l.equals("nombreText")&& nombreText.getText().equals("Ingrese el nombre de su restaurante")){
+    public void defecto(String l) {
+
+        if (l.equals("nombreText") && nombreText.getText().equals("Ingrese el nombre de su restaurante")) {
             nombreText.setText("");
             nombreText.setForeground(Color.black);
-        }else{
-            if(nombreText.getText().isEmpty()){
-            nombreText.setText("Ingrese el nombre de su restaurante");
-            nombreText.setForeground(Color.gray);
+        } else {
+            if (nombreText.getText().isEmpty()) {
+                nombreText.setText("Ingrese el nombre de su restaurante");
+                nombreText.setForeground(Color.gray);
             }
         }
-        
-        if(l.equals("usuarioText") && usuarioText.getText().equals("Ingrese el nombre con el que iniciará sesión")){
+
+        if (l.equals("usuarioText") && usuarioText.getText().equals("Ingrese el nombre con el que iniciará sesión")) {
             usuarioText.setText("");
             usuarioText.setForeground(Color.black);
-        }else{
-            if(usuarioText.getText().isEmpty()){
-            usuarioText.setText("Ingrese el nombre con el que iniciará sesión");
-            usuarioText.setForeground(Color.gray);
+        } else {
+            if (usuarioText.getText().isEmpty()) {
+                usuarioText.setText("Ingrese el nombre con el que iniciará sesión");
+                usuarioText.setForeground(Color.gray);
             }
         }
-        
-        if(l.equals("mailText") && mailText.getText().equals("Ingrese su e-mail")){
+
+        if (l.equals("mailText") && mailText.getText().equals("Ingrese su e-mail")) {
             mailText.setText("");
             mailText.setForeground(Color.black);
-        }else{
-            if(mailText.getText().isEmpty()){
-            mailText.setText("Ingrese su e-mail");
-            mailText.setForeground(Color.gray);
+        } else {
+            if (mailText.getText().isEmpty()) {
+                mailText.setText("Ingrese su e-mail");
+                mailText.setForeground(Color.gray);
             }
         }
-        
-        if(l.equals("mail2Text")&& mail2Text.getText().equals("Repita su e-mail")){
+
+        if (l.equals("mail2Text") && mail2Text.getText().equals("Repita su e-mail")) {
             mail2Text.setText("");
             mail2Text.setForeground(Color.black);
-        }else{
-           if(mail2Text.getText().isEmpty()){
-            mail2Text.setText("Repita su e-mail");
-            mail2Text.setForeground(Color.gray);
+        } else {
+            if (mail2Text.getText().isEmpty()) {
+                mail2Text.setText("Repita su e-mail");
+                mail2Text.setForeground(Color.gray);
             }
         }
-        
-        if(l.equals("passText")&& passText.getText().equals("********")){
+
+        if (l.equals("passText") && passText.getText().equals("********")) {
             passText.setText("");
             passText.setForeground(Color.black);
-        }else{
-           if(String.valueOf(passText.getPassword()).isEmpty()){
-            passText.setText("********");
-            passText.setForeground(Color.gray);
+        } else {
+            if (String.valueOf(passText.getPassword()).isEmpty()) {
+                passText.setText("********");
+                passText.setForeground(Color.gray);
             }
         }
-        
-        if(l.equals("pass2Text")&& pass2Text.getText().equals("********")){
+
+        if (l.equals("pass2Text") && pass2Text.getText().equals("********")) {
             pass2Text.setText("");
             pass2Text.setForeground(Color.black);
-        }else{
-           if(String.valueOf(pass2Text.getPassword()).isEmpty()){
-            pass2Text.setText("********");
-            pass2Text.setForeground(Color.gray);
+        } else {
+            if (String.valueOf(pass2Text.getPassword()).isEmpty()) {
+                pass2Text.setText("********");
+                pass2Text.setForeground(Color.gray);
             }
         }
-        
-        if(l.equals("celularText")&& celularText.getText().equals("Ingrese su número de celular")){
+
+        if (l.equals("celularText") && celularText.getText().equals("Ingrese su número de celular")) {
             celularText.setText("");
             celularText.setForeground(Color.black);
-        }else{
-           if(celularText.getText().isEmpty()){
-            celularText.setText("Ingrese su número de celular");
-            celularText.setForeground(Color.gray);
+        } else {
+            if (celularText.getText().isEmpty()) {
+                celularText.setText("Ingrese su número de celular");
+                celularText.setForeground(Color.gray);
             }
         }
-        
-        if(l.equals("especialidadText")&& especialidadText.getText().equals("Escriba el platillo por el que se caracteriza")){
+
+        if (l.equals("especialidadText") && especialidadText.getText().equals("Escriba el platillo por el que se caracteriza")) {
             especialidadText.setText("");
             especialidadText.setForeground(Color.black);
-        }else{
-           if(especialidadText.getText().isEmpty()){
-            especialidadText.setText("Escriba el platillo por el que se caracteriza");
-            especialidadText.setForeground(Color.gray);
+        } else {
+            if (especialidadText.getText().isEmpty()) {
+                especialidadText.setText("Escriba el platillo por el que se caracteriza");
+                especialidadText.setForeground(Color.gray);
             }
         }
-        
-        if(l.equals("atencionText")&& atencionText.getText().equals("Ingrese los horarios y dias de atencion(opcional)")){
+
+        if (l.equals("atencionText") && atencionText.getText().equals("Ingrese los horarios y dias de atencion(opcional)")) {
             atencionText.setText("");
             atencionText.setForeground(Color.black);
-        }else{
-           if(atencionText.getText().isEmpty()){
-            atencionText.setText("Ingrese los horarios y dias de atencion(opcional)");
-            atencionText.setForeground(Color.gray);
+        } else {
+            if (atencionText.getText().isEmpty()) {
+                atencionText.setText("Ingrese los horarios y dias de atencion(opcional)");
+                atencionText.setForeground(Color.gray);
             }
-           
+
         }
-        
-        if(l.equals("dirText")&& dirText.getText().equals("Ingrese la direccion de su establecimiento")){
+
+        if (l.equals("dirText") && dirText.getText().equals("Ingrese la direccion de su establecimiento")) {
             dirText.setText("");
             dirText.setForeground(Color.black);
-        }else{
-           if(dirText.getText().isEmpty()){
-            dirText.setText("Ingrese la direccion de su establecimiento");
-            dirText.setForeground(Color.gray);
+        } else {
+            if (dirText.getText().isEmpty()) {
+                dirText.setText("Ingrese la direccion de su establecimiento");
+                dirText.setForeground(Color.gray);
             }
         }
     }
