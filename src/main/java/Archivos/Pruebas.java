@@ -21,6 +21,8 @@ public class Pruebas {
         prueba.crearComensal(com3);
         Comensal com4 = new Comensal("juancho","juan97","dog3","juancho@gmail.com");
         prueba.crearComensal(com4);
+        Comensal com5 = new Comensal("santos col","snc","sant","san@gmail.com");
+        prueba.crearComensal(com5);
     }
     
 }
