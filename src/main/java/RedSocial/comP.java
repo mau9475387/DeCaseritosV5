@@ -4,8 +4,15 @@
  */
 package RedSocial;
 
-
+import Archivos.Ficheros;
+import Cuentas.Comensal;
 import java.awt.Color;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,13 +20,23 @@ import java.awt.Color;
  */
 public class comP extends javax.swing.JPanel {
 
+    Color naranjaSuave;
+    Color naranja;
     CrearCuentas frame;
-    
+
     public comP(CrearCuentas x) {
         initComponents();
+        naranja = new Color(247, 87, 26);
+        naranjaSuave = new Color(250, 183, 44);
+        crearbtn.setBackground(naranja);
+        crearlabel.setForeground(Color.white);
+        cancelarbtn.setBackground(naranja);
+        cancelarlabel.setForeground(Color.white);
         frame = x;
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,17 +53,9 @@ public class comP extends javax.swing.JPanel {
         pass2L = new javax.swing.JLabel();
         mail2L = new javax.swing.JLabel();
         celularL = new javax.swing.JLabel();
-        fotoL = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
         mailL = new javax.swing.JLabel();
         datosP = new javax.swing.JPanel();
-        jSeparator8 = new javax.swing.JSeparator();
-        jSeparator9 = new javax.swing.JSeparator();
-        jSeparator10 = new javax.swing.JSeparator();
-        jSeparator11 = new javax.swing.JSeparator();
-        jSeparator12 = new javax.swing.JSeparator();
-        jSeparator13 = new javax.swing.JSeparator();
-        jSeparator14 = new javax.swing.JSeparator();
         nombreText = new javax.swing.JTextField();
         usuarioText = new javax.swing.JTextField();
         mailText = new javax.swing.JTextField();
@@ -54,52 +63,56 @@ public class comP extends javax.swing.JPanel {
         celularText = new javax.swing.JTextField();
         passText = new javax.swing.JPasswordField();
         pass2Text = new javax.swing.JPasswordField();
-        foto = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        fotoL = new javax.swing.JLabel();
+        fotoperfillbl = new javax.swing.JLabel();
+        pathphotolbl = new javax.swing.JLabel();
+        Buscarfotobtn = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        crearbtn = new javax.swing.JPanel();
+        crearlabel = new javax.swing.JLabel();
+        cancelarbtn = new javax.swing.JPanel();
+        cancelarlabel = new javax.swing.JLabel();
 
         setOpaque(false);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 0, -1, -1));
 
         nombreL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         nombreL.setText("Nombre completo:");
+        add(nombreL, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 30));
 
         usuarioL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         usuarioL.setText("Nombre de usuario:");
+        add(usuarioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, 30));
 
         contraseñaL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         contraseñaL.setText("Contraseña:");
+        add(contraseñaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
 
         pass2L.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         pass2L.setText("Repita la contraseña:");
+        add(pass2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
 
         mail2L.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         mail2L.setText("repita su E-mail:");
+        add(mail2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
 
         celularL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         celularL.setText("Numero de celular:");
+        add(celularL, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
 
-        fotoL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        fotoL.setText("Foto de perfil:");
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel1.setText("CREAR CUENTA DE TIPO COMENSAL");
+        titulo.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        titulo.setText("CREAR CUENTA DE TIPO COMENSAL");
+        add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
 
         mailL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         mailL.setText("E-mail:");
+        add(mailL, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
 
         datosP.setOpaque(false);
         datosP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        datosP.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 570, 10));
-        datosP.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 570, 10));
-        datosP.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 570, 10));
-        datosP.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 570, 10));
-        datosP.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 570, 10));
-        datosP.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 570, 10));
-        datosP.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 570, 10));
 
         nombreText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         nombreText.setForeground(new java.awt.Color(204, 204, 204));
@@ -110,7 +123,7 @@ public class comP extends javax.swing.JPanel {
                 nombreTextMousePressed(evt);
             }
         });
-        datosP.add(nombreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 11, 570, -1));
+        datosP.add(nombreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 530, 30));
 
         usuarioText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         usuarioText.setForeground(new java.awt.Color(204, 204, 204));
@@ -121,7 +134,7 @@ public class comP extends javax.swing.JPanel {
                 usuarioTextMousePressed(evt);
             }
         });
-        datosP.add(usuarioText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 570, -1));
+        datosP.add(usuarioText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 530, 30));
 
         mailText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         mailText.setForeground(new java.awt.Color(204, 204, 204));
@@ -132,7 +145,7 @@ public class comP extends javax.swing.JPanel {
                 mailTextMousePressed(evt);
             }
         });
-        datosP.add(mailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 570, -1));
+        datosP.add(mailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 530, 30));
 
         mail2Text.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         mail2Text.setForeground(new java.awt.Color(204, 204, 204));
@@ -143,7 +156,7 @@ public class comP extends javax.swing.JPanel {
                 mail2TextMousePressed(evt);
             }
         });
-        datosP.add(mail2Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 570, -1));
+        datosP.add(mail2Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 530, 30));
 
         celularText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         celularText.setForeground(new java.awt.Color(204, 204, 204));
@@ -159,7 +172,7 @@ public class comP extends javax.swing.JPanel {
                 celularTextActionPerformed(evt);
             }
         });
-        datosP.add(celularText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 217, 570, 20));
+        datosP.add(celularText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 530, 30));
 
         passText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         passText.setForeground(new java.awt.Color(204, 204, 204));
@@ -170,7 +183,7 @@ public class comP extends javax.swing.JPanel {
                 passTextMousePressed(evt);
             }
         });
-        datosP.add(passText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 570, -1));
+        datosP.add(passText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 530, 30));
 
         pass2Text.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         pass2Text.setForeground(new java.awt.Color(204, 204, 204));
@@ -181,130 +194,108 @@ public class comP extends javax.swing.JPanel {
                 pass2TextMousePressed(evt);
             }
         });
-        datosP.add(pass2Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 570, 20));
+        datosP.add(pass2Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 530, 30));
 
-        foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        fotoL.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        fotoL.setText("Foto de perfil:");
+        datosP.add(fotoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
 
-        javax.swing.GroupLayout fotoLayout = new javax.swing.GroupLayout(foto);
-        foto.setLayout(fotoLayout);
-        fotoLayout.setHorizontalGroup(
-            fotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        fotoLayout.setVerticalGroup(
-            fotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        fotoperfillbl.setBackground(new java.awt.Color(255, 153, 51));
+        fotoperfillbl.setForeground(new java.awt.Color(255, 153, 51));
+        fotoperfillbl.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        datosP.add(fotoperfillbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 100, 100));
+        datosP.add(pathphotolbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 0, 10));
 
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel2.setText("Crear");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Buscar Foto");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel2MouseClicked(evt);
+                jLabel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel1MouseExited(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel3.setText("Cancelar");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+        javax.swing.GroupLayout BuscarfotobtnLayout = new javax.swing.GroupLayout(Buscarfotobtn);
+        Buscarfotobtn.setLayout(BuscarfotobtnLayout);
+        BuscarfotobtnLayout.setHorizontalGroup(
+            BuscarfotobtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        BuscarfotobtnLayout.setVerticalGroup(
+            BuscarfotobtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(contraseñaL)
-                                    .addComponent(pass2L)
-                                    .addComponent(nombreL)
-                                    .addComponent(usuarioL)
-                                    .addComponent(mail2L)
-                                    .addComponent(mailL)
-                                    .addComponent(fotoL)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(celularL)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(90, 90, 90)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(datosP, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(282, 282, 282)
-                        .addComponent(jLabel1)))
-                .addContainerGap(39, Short.MAX_VALUE))
+        datosP.add(Buscarfotobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 110, 30));
+
+        add(datosP, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 540, 486));
+
+        crearbtn.setPreferredSize(new java.awt.Dimension(120, 40));
+        crearbtn.setRequestFocusEnabled(false);
+        crearbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearbtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                crearbtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                crearbtnMouseExited(evt);
+            }
+        });
+
+        crearlabel.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        crearlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        crearlabel.setText("Crear");
+
+        javax.swing.GroupLayout crearbtnLayout = new javax.swing.GroupLayout(crearbtn);
+        crearbtn.setLayout(crearbtnLayout);
+        crearbtnLayout.setHorizontalGroup(
+            crearbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(crearlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(nombreL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(usuarioL)
-                        .addGap(18, 18, 18)
-                        .addComponent(mailL)
-                        .addGap(18, 18, 18)
-                        .addComponent(mail2L)
-                        .addGap(18, 18, 18)
-                        .addComponent(contraseñaL)
-                        .addGap(20, 20, 20)
-                        .addComponent(pass2L)
-                        .addGap(22, 22, 22)
-                        .addComponent(celularL)
-                        .addGap(26, 26, 26)
-                        .addComponent(fotoL)
-                        .addGap(18, 18, 18)
-                        .addComponent(foto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(datosP, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(80, 80, 80))
+        crearbtnLayout.setVerticalGroup(
+            crearbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(crearlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
+
+        add(crearbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, -1, -1));
+
+        cancelarbtn.setPreferredSize(new java.awt.Dimension(120, 40));
+        cancelarbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelarbtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cancelarbtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cancelarbtnMouseExited(evt);
+            }
+        });
+
+        cancelarlabel.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        cancelarlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cancelarlabel.setText("Cancelar");
+
+        javax.swing.GroupLayout cancelarbtnLayout = new javax.swing.GroupLayout(cancelarbtn);
+        cancelarbtn.setLayout(cancelarbtnLayout);
+        cancelarbtnLayout.setHorizontalGroup(
+            cancelarbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cancelarlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        );
+        cancelarbtnLayout.setVerticalGroup(
+            cancelarbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cancelarlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        add(cancelarbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 570, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void celularTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularTextActionPerformed
@@ -312,264 +303,325 @@ public class comP extends javax.swing.JPanel {
     }//GEN-LAST:event_celularTextActionPerformed
 
     private void nombreTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreTextMousePressed
-        if(nombreText.getText().equals("Ingrese su nombre completo")){
+        if (nombreText.getText().equals("Ingrese su nombre completo")) {
             nombreText.setText("");
             nombreText.setForeground(Color.black);
         }
-        
-        if(usuarioText.getText().isEmpty()){
+
+        if (usuarioText.getText().isEmpty()) {
             usuarioText.setText("Ingrese el nombre con el que iniciará sesión");
             usuarioText.setForeground(Color.gray);
         }
-        if(mailText.getText().isEmpty()){
+        if (mailText.getText().isEmpty()) {
             mailText.setText("Ingrese su e-mail");
             mailText.setForeground(Color.gray);
         }
-        if(mail2Text.getText().isEmpty()){
+        if (mail2Text.getText().isEmpty()) {
             mail2Text.setText("Repita su e-mail");
             mail2Text.setForeground(Color.gray);
         }
-        
-        if(String.valueOf(passText.getPassword()).isEmpty()){
+
+        if (String.valueOf(passText.getPassword()).isEmpty()) {
             passText.setText("********");
             passText.setForeground(Color.gray);
         }
-        if(String.valueOf(pass2Text.getPassword()).isEmpty()){
+        if (String.valueOf(pass2Text.getPassword()).isEmpty()) {
             pass2Text.setText("********");
             pass2Text.setForeground(Color.gray);
         }
-        if(celularText.getText().isEmpty()){
+        if (celularText.getText().isEmpty()) {
             celularText.setText("Ingrese su número de celular");
             celularText.setForeground(Color.gray);
         }
     }//GEN-LAST:event_nombreTextMousePressed
 
     private void usuarioTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usuarioTextMousePressed
-        if(usuarioText.getText().equals("Ingrese el nombre con el que iniciará sesión")){
+        if (usuarioText.getText().equals("Ingrese el nombre con el que iniciará sesión")) {
             usuarioText.setText("");
             usuarioText.setForeground(Color.black);
         }
-        
-        if(nombreText.getText().isEmpty()){
+
+        if (nombreText.getText().isEmpty()) {
             nombreText.setText("Ingrese su nombre completo");
             nombreText.setForeground(Color.gray);
         }
-        if(mailText.getText().isEmpty()){
+        if (mailText.getText().isEmpty()) {
             mailText.setText("Ingrese su e-mail");
             mailText.setForeground(Color.gray);
         }
-        if(mail2Text.getText().isEmpty()){
+        if (mail2Text.getText().isEmpty()) {
             mail2Text.setText("Repita su e-mail");
             mail2Text.setForeground(Color.gray);
         }
-        
-        if(String.valueOf(passText.getPassword()).isEmpty()){
+
+        if (String.valueOf(passText.getPassword()).isEmpty()) {
             passText.setText("********");
             passText.setForeground(Color.gray);
         }
-        if(String.valueOf(pass2Text.getPassword()).isEmpty()){
+        if (String.valueOf(pass2Text.getPassword()).isEmpty()) {
             pass2Text.setText("********");
             pass2Text.setForeground(Color.gray);
         }
-        if(celularText.getText().isEmpty()){
+        if (celularText.getText().isEmpty()) {
             celularText.setText("Ingrese su número de celular");
             celularText.setForeground(Color.gray);
         }
     }//GEN-LAST:event_usuarioTextMousePressed
 
     private void mailTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mailTextMousePressed
-        if(mailText.getText().equals("Ingrese su e-mail")){
+        if (mailText.getText().equals("Ingrese su e-mail")) {
             mailText.setText("");
             mailText.setForeground(Color.black);
         }
-        
-        if(nombreText.getText().isEmpty()){
+
+        if (nombreText.getText().isEmpty()) {
             nombreText.setText("Ingrese su nombre completo");
             nombreText.setForeground(Color.gray);
         }
-        if(usuarioText.getText().isEmpty()){
+        if (usuarioText.getText().isEmpty()) {
             usuarioText.setText("Ingrese el nombre con el que iniciará sesión");
             usuarioText.setForeground(Color.gray);
         }
-        if(mail2Text.getText().isEmpty()){
+        if (mail2Text.getText().isEmpty()) {
             mail2Text.setText("Repita su e-mail");
             mail2Text.setForeground(Color.gray);
         }
-        
-        if(String.valueOf(passText.getPassword()).isEmpty()){
+
+        if (String.valueOf(passText.getPassword()).isEmpty()) {
             passText.setText("********");
             passText.setForeground(Color.gray);
         }
-        if(String.valueOf(pass2Text.getPassword()).isEmpty()){
+        if (String.valueOf(pass2Text.getPassword()).isEmpty()) {
             pass2Text.setText("********");
             pass2Text.setForeground(Color.gray);
         }
-        if(celularText.getText().isEmpty()){
+        if (celularText.getText().isEmpty()) {
             celularText.setText("Ingrese su número de celular");
             celularText.setForeground(Color.gray);
         }
     }//GEN-LAST:event_mailTextMousePressed
 
     private void mail2TextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mail2TextMousePressed
-        if(mail2Text.getText().equals("Repita su e-mail")){
+        if (mail2Text.getText().equals("Repita su e-mail")) {
             mail2Text.setText("");
             mail2Text.setForeground(Color.black);
         }
-        
-        if(nombreText.getText().isEmpty()){
+
+        if (nombreText.getText().isEmpty()) {
             nombreText.setText("Ingrese su nombre completo");
             nombreText.setForeground(Color.gray);
         }
-        if(usuarioText.getText().isEmpty()){
+        if (usuarioText.getText().isEmpty()) {
             usuarioText.setText("Ingrese el nombre con el que iniciará sesión");
             usuarioText.setForeground(Color.gray);
         }
-        if(mailText.getText().isEmpty()){
+        if (mailText.getText().isEmpty()) {
             mailText.setText("Ingrese su e-mail");
             mailText.setForeground(Color.gray);
         }
-        
-        if(String.valueOf(passText.getPassword()).isEmpty()){
+
+        if (String.valueOf(passText.getPassword()).isEmpty()) {
             passText.setText("********");
             passText.setForeground(Color.gray);
         }
-        if(String.valueOf(pass2Text.getPassword()).isEmpty()){
+        if (String.valueOf(pass2Text.getPassword()).isEmpty()) {
             pass2Text.setText("********");
             pass2Text.setForeground(Color.gray);
         }
-        if(celularText.getText().isEmpty()){
+        if (celularText.getText().isEmpty()) {
             celularText.setText("Ingrese su número de celular");
             celularText.setForeground(Color.gray);
         }
     }//GEN-LAST:event_mail2TextMousePressed
 
     private void celularTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_celularTextMousePressed
-        if(celularText.getText().equals("Ingrese su número de celular")){
+        if (celularText.getText().equals("Ingrese su número de celular")) {
             celularText.setText("");
             celularText.setForeground(Color.black);
         }
-        
-        if(nombreText.getText().isEmpty()){
+
+        if (nombreText.getText().isEmpty()) {
             nombreText.setText("Ingrese su nombre completo");
             nombreText.setForeground(Color.gray);
         }
-        if(usuarioText.getText().isEmpty()){
+        if (usuarioText.getText().isEmpty()) {
             usuarioText.setText("Ingrese el nombre con el que iniciará sesión");
             usuarioText.setForeground(Color.gray);
         }
-        if(mailText.getText().isEmpty()){
+        if (mailText.getText().isEmpty()) {
             mailText.setText("Ingrese su e-mail");
             mailText.setForeground(Color.gray);
         }
-        
-        if(String.valueOf(passText.getPassword()).isEmpty()){
+
+        if (String.valueOf(passText.getPassword()).isEmpty()) {
             passText.setText("********");
             passText.setForeground(Color.gray);
         }
-        if(String.valueOf(pass2Text.getPassword()).isEmpty()){
+        if (String.valueOf(pass2Text.getPassword()).isEmpty()) {
             pass2Text.setText("********");
             pass2Text.setForeground(Color.gray);
         }
-        if(mail2Text.getText().isEmpty()){
+        if (mail2Text.getText().isEmpty()) {
             mail2Text.setText("Repita su e-mail");
             mail2Text.setForeground(Color.gray);
         }
     }//GEN-LAST:event_celularTextMousePressed
 
     private void passTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passTextMousePressed
-        if(String.valueOf(passText.getPassword()).equals("********")){
+        if (String.valueOf(passText.getPassword()).equals("********")) {
             passText.setText("");
             passText.setForeground(Color.black);
         }
-        
-        if(nombreText.getText().isEmpty()){
+
+        if (nombreText.getText().isEmpty()) {
             nombreText.setText("Ingrese su nombre completo");
             nombreText.setForeground(Color.gray);
         }
-        if(mailText.getText().isEmpty()){
+        if (mailText.getText().isEmpty()) {
             mailText.setText("Ingrese su e-mail");
             mailText.setForeground(Color.gray);
         }
-        if(mail2Text.getText().isEmpty()){
+        if (mail2Text.getText().isEmpty()) {
             mail2Text.setText("Repita su e-mail");
             mail2Text.setForeground(Color.gray);
         }
-        
-        if(String.valueOf(pass2Text.getPassword()).isEmpty()){
+
+        if (String.valueOf(pass2Text.getPassword()).isEmpty()) {
             pass2Text.setText("********");
             pass2Text.setForeground(Color.gray);
         }
-        if(usuarioText.getText().isEmpty()){
+        if (usuarioText.getText().isEmpty()) {
             usuarioText.setText("Ingrese el nombre con el que iniciará sesión");
             usuarioText.setForeground(Color.gray);
         }
-        if(celularText.getText().isEmpty()){
+        if (celularText.getText().isEmpty()) {
             celularText.setText("Ingrese su número de celular");
             celularText.setForeground(Color.gray);
         }
     }//GEN-LAST:event_passTextMousePressed
 
     private void pass2TextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pass2TextMousePressed
-        if(String.valueOf(pass2Text.getPassword()).equals("********")){
+        if (String.valueOf(pass2Text.getPassword()).equals("********")) {
             pass2Text.setText("");
             pass2Text.setForeground(Color.black);
         }
-        
-        if(nombreText.getText().isEmpty()){
+
+        if (nombreText.getText().isEmpty()) {
             nombreText.setText("Ingrese su nombre completo");
             nombreText.setForeground(Color.gray);
         }
-        if(mailText.getText().isEmpty()){
+        if (mailText.getText().isEmpty()) {
             mailText.setText("Ingrese su e-mail");
             mailText.setForeground(Color.gray);
         }
-        if(mail2Text.getText().isEmpty()){
+        if (mail2Text.getText().isEmpty()) {
             mail2Text.setText("Repita su e-mail");
             mail2Text.setForeground(Color.gray);
         }
-        
-        if(String.valueOf(passText.getPassword()).isEmpty()){
+
+        if (String.valueOf(passText.getPassword()).isEmpty()) {
             passText.setText("********");
             passText.setForeground(Color.gray);
         }
-        if(usuarioText.getText().isEmpty()){
+        if (usuarioText.getText().isEmpty()) {
             usuarioText.setText("Ingrese el nombre con el que iniciará sesión");
             usuarioText.setForeground(Color.gray);
         }
-        if(celularText.getText().isEmpty()){
+        if (celularText.getText().isEmpty()) {
             celularText.setText("Ingrese su número de celular");
             celularText.setForeground(Color.gray);
         }
     }//GEN-LAST:event_pass2TextMousePressed
 
-    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
+    private void cancelarbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarbtnMouseClicked
         Login nuevo = new Login();
         nuevo.setVisible(true);
         frame.cerrar();
+
+    }//GEN-LAST:event_cancelarbtnMouseClicked
+
+    private void crearbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearbtnMouseEntered
+        crearbtn.setBackground(naranjaSuave);
+    }//GEN-LAST:event_crearbtnMouseEntered
+
+    private void crearbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearbtnMouseExited
+        crearbtn.setBackground(naranja);
+    }//GEN-LAST:event_crearbtnMouseExited
+
+    private void cancelarbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarbtnMouseEntered
+        cancelarbtn.setBackground(naranjaSuave);
+    }//GEN-LAST:event_cancelarbtnMouseEntered
+
+    private void cancelarbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarbtnMouseExited
+        cancelarbtn.setBackground(naranja);
+    }//GEN-LAST:event_cancelarbtnMouseExited
+
+    private void crearbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearbtnMouseClicked
+      //  crearComensal();
         
-    }//GEN-LAST:event_jPanel2MouseClicked
+       // nombreText.setText("");
+       // usuarioText.setText("");
+       // mailText.setText("");
+     //   mail2Text.setText("");
+      //  passText.setText("");
+        //pass2Text.setText("");
+      //  celularText.setText("");
+
+      Ficheros Comensales = new Ficheros();
+        Comensales.crearComensal(new Comensal(nombreText.getText(), usuarioText.getText(),  passText.getText(), mailText.getText(), celularText.getText()));
+      
+           File imagenSeleccionadado = new File(pathphotolbl.getText());
+        CrearImagenEnRoot(imagenSeleccionadado, Comensales);
+        try{
+            InsertarUsuario(Comensales);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_crearbtnMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+ JFileChooser selector=new JFileChooser();
+        selector.showOpenDialog(this);
+
+        File archivo = selector.getSelectedFile();
+
+        if (archivo != null) {
+            String Origen = archivo.getPath();
+            ImageIcon ingresar = new ImageIcon(Origen);
+            Icon iconoIngresar = new ImageIcon(ingresar.getImage().getScaledInstance(fotoperfillbl.getWidth(), fotoperfillbl.getHeight(), Image.SCALE_FAST));
+            fotoperfillbl.setIcon(iconoIngresar);
+            pathphotolbl.setText(Origen);
+            pathphotolbl.setVisible(false);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Por favor seleccione una imagen");
+        }    
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        Buscarfotobtn.setBackground(naranjaSuave);
+    }//GEN-LAST:event_jLabel1MouseEntered
+
+    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+        Buscarfotobtn.setBackground(naranja);
+
+    }//GEN-LAST:event_jLabel1MouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Buscarfotobtn;
+    private javax.swing.JPanel cancelarbtn;
+    private javax.swing.JLabel cancelarlabel;
     private javax.swing.JLabel celularL;
     private javax.swing.JTextField celularText;
     private javax.swing.JLabel contraseñaL;
+    private javax.swing.JPanel crearbtn;
+    private javax.swing.JLabel crearlabel;
     private javax.swing.JPanel datosP;
     private javax.swing.JPanel fondo;
-    private javax.swing.JPanel foto;
     private javax.swing.JLabel fotoL;
+    private javax.swing.JLabel fotoperfillbl;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator12;
-    private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JSeparator jSeparator14;
-    private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel mail2L;
     private javax.swing.JTextField mail2Text;
     private javax.swing.JLabel mailL;
@@ -579,7 +631,24 @@ public class comP extends javax.swing.JPanel {
     private javax.swing.JLabel pass2L;
     private javax.swing.JPasswordField pass2Text;
     private javax.swing.JPasswordField passText;
+    private javax.swing.JLabel pathphotolbl;
+    private javax.swing.JLabel titulo;
     private javax.swing.JLabel usuarioL;
     private javax.swing.JTextField usuarioText;
     // End of variables declaration//GEN-END:variables
+
+    public static void main (String[] args){
+        
+    }
+    private void crearComensal() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void CrearImagenEnRoot(File imagenSeleccionadado, Ficheros Comensales) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void InsertarUsuario(Ficheros Comensales) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -4,7 +4,6 @@
  */
 package RedSocial;
 
-
 import Cuentas.Cuenta;
 import java.awt.Color;
 import java.awt.Image;
@@ -20,37 +19,37 @@ import Archivos.Ficheros;
 import Cuentas.Comensal;
 import EDL.ListaDE;
 
-
-
 /**
  *
  * @author Mau
  */
-
 public class Login extends javax.swing.JFrame {
-    
-    int xMouse,yMouse;//posicion del mouse en la pantalla
+
+    int xMouse, yMouse;//posicion del mouse en la pantalla
     Error error;
     //Error impresiones;
     Ficheros ficheros;
     ListaDE<Cuenta> cuentas;
     boolean usuarioExiste;
     boolean passExiste;
-    
+
     public Login() {
         initComponents();
         setLocationRelativeTo(null);//fija la ventana de login al centro de la pantalla
-        ingresarBtn.setBackground(new Color(242,242,242));
-        crearCuentaBtn.setBackground(new Color(242,242,242));
+        ingresarBtn.setBackground(new Color(242, 242, 242));
+        crearCuentaBtn.setBackground(new Color(242, 242, 242));
         error = new Error();
         ficheros = new Ficheros();
-        usuarioExiste=false;
-        passExiste= false;
+        usuarioExiste = false;
+        passExiste = false;
         ImageIcon imagen = new ImageIcon("src\\main\\java\\recursos\\imagenes\\fondoLogin.png");
-        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(imagenLogin.getWidth(), imagenLogin.getHeight(),Image.SCALE_DEFAULT));
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(imagenLogin.getWidth(), imagenLogin.getHeight(), Image.SCALE_DEFAULT));
         imagenLogin.setIcon(icono);
         cuentas = new ListaDE<Cuenta>();
+
         leerComensales();
+
+
         //impresiones = new Error();
         //impresiones.cambiarTitulo("Lista de cuentas");
         //impresiones.cambiarMensaje(cuentas.toString());
@@ -306,7 +305,7 @@ public class Login extends javax.swing.JFrame {
     private void barraSuperiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barraSuperiorMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xMouse, y-yMouse);
+        this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_barraSuperiorMouseDragged
 
     private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
@@ -315,7 +314,7 @@ public class Login extends javax.swing.JFrame {
 
     private void exitBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseEntered
         exitLabel.setForeground(Color.white);
-        exitBtn.setBackground(new Color(247,87,26));
+        exitBtn.setBackground(new Color(247, 87, 26));
     }//GEN-LAST:event_exitBtnMouseEntered
 
     private void exitBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseExited
@@ -325,44 +324,44 @@ public class Login extends javax.swing.JFrame {
 
     private void ingresarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarBtnMouseEntered
         ingresarLabel.setForeground(Color.white);
-        ingresarBtn.setBackground(new Color(247,87,26));
+        ingresarBtn.setBackground(new Color(247, 87, 26));
     }//GEN-LAST:event_ingresarBtnMouseEntered
 
     private void ingresarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarBtnMouseExited
         ingresarLabel.setForeground(Color.black);
-        ingresarBtn.setBackground(new Color(242,242,242));
+        ingresarBtn.setBackground(new Color(242, 242, 242));
     }//GEN-LAST:event_ingresarBtnMouseExited
 
     private void crearCuentaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaBtnMouseEntered
         crearCuentaLabel.setForeground(Color.white);
-        crearCuentaBtn.setBackground(new Color(247,87,26));
+        crearCuentaBtn.setBackground(new Color(247, 87, 26));
     }//GEN-LAST:event_crearCuentaBtnMouseEntered
 
     private void crearCuentaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaBtnMouseExited
         crearCuentaLabel.setForeground(Color.black);
-        crearCuentaBtn.setBackground(new Color(242,242,242));
+        crearCuentaBtn.setBackground(new Color(242, 242, 242));
     }//GEN-LAST:event_crearCuentaBtnMouseExited
 
     private void emailTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailTextMousePressed
-        if(emailText.getText().equals("Introduce tu nombre de usuario")){
+        if (emailText.getText().equals("Introduce tu nombre de usuario")) {
             emailText.setText("");
             emailText.setForeground(Color.black);
         }
-        
-        if(String.valueOf(passText.getPassword()).isEmpty()){
+
+        if (String.valueOf(passText.getPassword()).isEmpty()) {
             passText.setText("********");
             passText.setForeground(Color.gray);
         }
     }//GEN-LAST:event_emailTextMousePressed
 
     private void passTextMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passTextMousePressed
-        if(String.valueOf(passText.getPassword()).equals("********")){
+        if (String.valueOf(passText.getPassword()).equals("********")) {
             passText.setText("");
             passText.setForeground(Color.black);
         }
-        
-        if(emailText.getText().isEmpty()){
-            emailText.setText("Introduce tu nombre de usuario");       
+
+        if (emailText.getText().isEmpty()) {
+            emailText.setText("Introduce tu nombre de usuario");
             emailText.setForeground(Color.gray);
         }
     }//GEN-LAST:event_passTextMousePressed
@@ -378,25 +377,24 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_emailTextActionPerformed
 
     private void ingresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarBtnMouseClicked
-    if(verificarCuenta(emailText.getText(),String.valueOf(passText.getPassword()))){
-            Sitio l= new Sitio(cuentas,posicion(emailText.getText()));
+        if (verificarCuenta(emailText.getText(), String.valueOf(passText.getPassword()))) {
+            Sitio l = new Sitio(cuentas, posicion(emailText.getText()));
             l.setVisible(true);
             this.dispose();
-           
-            
-    }else{
-        if(usuarioExiste==false && passExiste==false){
-            error.cambiarMensaje("usuario y contraseña incorrectos");
-            error.setVisible(true);
-        }else{
-            if(usuarioExiste==true && passExiste==false){
-            error.cambiarMensaje("contraseña incorrecta");
-            error.setVisible(true);
-            usuarioExiste=false;
+
+        } else {
+            if (usuarioExiste == false && passExiste == false) {
+                error.cambiarMensaje("usuario y contraseña incorrectos");
+                error.setVisible(true);
+            } else {
+                if (usuarioExiste == true && passExiste == false) {
+                    error.cambiarMensaje(" contraseña incorrecta");
+                    error.setVisible(true);
+                    usuarioExiste = false;
+                }
             }
         }
-    }
-    
+
     }//GEN-LAST:event_ingresarBtnMouseClicked
 
     /**
@@ -456,56 +454,58 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel slogan;
     // End of variables declaration//GEN-END:variables
 
-/**lee cada uno de los archivos de la carpeta comensales y los añade como objetos de tipo comensal
- a la lista cuentas*/    
-public void leerComensales(){
-    String directorio = "src\\main\\java\\recursos\\Cuentas\\Comensales";
-        try(DirectoryStream<Path> ds = Files.newDirectoryStream(Paths.get(directorio))){
-            for(Path ruta : ds){
-                Comensal c = ficheros.leerComensal(""+ruta.getFileName());
+    /**
+     * lee cada uno de los archivos de la carpeta comensales y los añade como
+     * objetos de tipo comensal a la lista cuentas
+     */
+    public void leerComensales() {
+        String directorio = "src\\main\\java\\recursos\\Cuentas\\Comensales";
+        try ( DirectoryStream<Path> ds = Files.newDirectoryStream(Paths.get(directorio))) {
+            for (Path ruta : ds) {
+                Comensal c = ficheros.leerComensal("" + ruta.getFileName());
                 cuentas.add(c);
             }
-        }catch(IOException e){
+        } catch (IOException e) {
             error.cambiarTitulo("IO exception e");
-            error.cambiarMensaje(""+e.getMessage());
+            error.cambiarMensaje("" + e.getMessage());
         }
-}
-
-public boolean verificarCuenta(String usuario,String pass){
-    boolean res=false;
-    
-    for(int i=0;i<cuentas.tamaño() && res !=true;i++){
-        if(cuentas.obtenerPos(i).getUsuario().equals(usuario)){
-            usuarioExiste = true;
-        }
-        if(cuentas.obtenerPos(i).getContraseña().equals(pass)){
-            passExiste = true;
-        }
-        if(usuarioExiste==true && passExiste==true){
-            res = true;
-        }
-        
-     }
-    return res;
     }
 
-/**devuelve la posicion del usuario en la lista*/
-public int posicion(String usuario){
-    boolean existe = false;
-    int res=0;
-    
-    for(int i=0;i<cuentas.tamaño() && existe !=true;i++){
-        res++;
-        if(cuentas.obtenerPos(i).getUsuario().equals(usuario)){
-            existe = true;
-        
-        
+    public boolean verificarCuenta(String usuario, String pass) {
+        boolean res = false;
+
+        for (int i = 0; i < cuentas.tamaño() && res != true; i++) {
+            if (cuentas.obtenerPos(i).getUsuario().equals(usuario)) {
+                usuarioExiste = true;
+            }
+            if (cuentas.obtenerPos(i).getContraseña().equals(pass)) {
+                passExiste = true;
+            }
+            if (usuarioExiste == true && passExiste == true) {
+                res = true;
+
+            }
+
         }
-   
-     } 
-    return res-1;
-    
- }
+        return res;
+    }
+
+    /**
+     * devuelve la posicion del usuario en la lista
+     */
+    public int posicion(String usuario) {
+        boolean existe = false;
+        int res = 0;
+
+        for (int i = 0; i < cuentas.tamaño() && existe != true; i++) {
+            res++;
+            if (cuentas.obtenerPos(i).getUsuario().equals(usuario)) {
+                existe = true;
+
+            }
+
+        }
+        return res - 1;
+
+    }
 }
-
-

@@ -40,7 +40,10 @@ public class Ficheros {
                 bw = new BufferedWriter(fw);
                 bw.write(com.getNombre()+"-"+com.getUsuario()+"-"+com.getContraseña()+"-"+
                     com.getEmail()+"-"+com.getCelular()+"-"+com.getTipo());
-            
+            Error error = new Error();
+                error.cambiarMensaje("Registro exitoso");
+                error.setVisible(true);
+                
                 }else{
                 Error error = new Error();
                 error.cambiarMensaje("el usuario ya existe");
@@ -66,7 +69,7 @@ public class Ficheros {
                     String linea=br.readLine();
                     String[] com = linea.split("-");
                     Comensal comensal = new Comensal(com[0],com[1],com[2],
-                                            com[3]);
+                                            com[3], com[4]);
                     res = comensal;
                 }
                 else{

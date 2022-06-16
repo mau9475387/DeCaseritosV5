@@ -13,15 +13,15 @@ import Cuentas.Comensal;
 public class Pruebas {
     public static void main (String[] args){
         Ficheros prueba = new Ficheros();
-        Comensal com1= new Comensal("mauricio Almendras","mau97","dog","mau94@gmail.com");
+        Comensal com1= new Comensal("mauricio Almendras","mau97","dog","mau94@gmail.com","1234");
         prueba.crearComensal(com1);
-        Comensal com2 = new Comensal("santos","santos97","dog2","santos@gmail.com");
+        Comensal com2 = new Comensal("santos","santos97","dog2","santos@gmail.com","1234");
         prueba.crearComensal(com2);
-        Comensal com3 = new Comensal("hector","hector1","bncms","hector1@gmail.com");
+        Comensal com3 = new Comensal("hector","hector1","bncms","hector1@gmail.com","1234");
         prueba.crearComensal(com3);
-        Comensal com4 = new Comensal("juancho","juan97","dog3","juancho@gmail.com");
+        Comensal com4 = new Comensal("juancho","juan97","dog3","juancho@gmail.com","1234");
         prueba.crearComensal(com4);
-        Comensal com5 = new Comensal("santos col","snc","sant","san@gmail.com");
+        Comensal com5 = new Comensal("santos col","snc","sant","san@gmail.com","1234");
         prueba.crearComensal(com5);
     }
     
