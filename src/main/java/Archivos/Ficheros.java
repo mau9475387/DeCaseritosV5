@@ -6,6 +6,7 @@ package Archivos;
 
 import RedSocial.Error;
 import Cuentas.Comensal;
+import Cuentas.Restaurante;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -86,4 +87,71 @@ public class Ficheros {
      return res;
     }
     
+    //Restaurante
+    public void crearRestaurante(Restaurante res){//guarda datos de comensales en archivos txt
+        try{
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            String usuario = res.getUsuario();
+            String dir = "src\\main\\java\\recursos\\Cuentas\\Restaurantes\\" + usuario;
+            File d = new File(dir);
+                if(d.mkdirs()){
+                File f = new File(dir+"\\"+usuario+".txt");
+                String dir2 = dir + "\\publicaciones";
+                File e = new File (dir2);
+                e.mkdir();
+                fw = new FileWriter(f,true);
+                bw = new BufferedWriter(fw);
+                bw.write(res.getNombre()+"-"+res.getUsuario()+"-"+res.getContraseña()+"-"+
+                res.getEmail()+"-"+res.getCelular()+"-"+res.getZNiños()+"-"+res.getWifi()+"-"+
+                res.getDelivery()+"-"+res.getHorario()+"-"+res.getEspecialidad()+"-"+
+                res.getDireccion()+"-"+res.getFotoPerfil()+"-"+res.getTipo());
+            
+                Error error = new Error();
+                error.cambiarMensaje("Registro exitoso");
+                error.cambiarTitulo("Registro completado");
+                error.setVisible(true);
+                
+                }else{
+                Error error = new Error();
+                error.cambiarMensaje("el usuario ya existe");
+                error.setVisible(true);
+                }
+            bw.close();
+            fw.close();
+        }
+        catch(IOException e){
+            Error error = new Error();
+            error.cambiarMensaje("IOException: e");
+            error.setVisible(true);
+        }
+    }
+    public Restaurante leerRestaurante(String usuario){
+        Restaurante res = null;
+        try{
+            File f = new File("src\\main\\java\\recursos\\Cuentas\\Restaurantes\\" 
+                    + usuario);
+                if (f.exists()){
+                    FileReader fr = new FileReader(f+"\\"+usuario+".txt");
+                    BufferedReader br = new BufferedReader(fr);
+                    String linea=br.readLine();
+                    String[] rest = linea.split("-");
+                    Restaurante restaurante = new Restaurante (rest[0],rest[1],rest[2],
+                                            rest[3], rest[4], rest[5], rest[6], rest[7]
+                                            , rest[8], rest[9], rest[10],rest[11]);
+                    res = restaurante;
+                }
+                else{
+                    Error error = new Error();
+                    error.cambiarMensaje("el usuario no existe");
+                    error.setVisible(true);
+                    
+                }
+        }catch(IOException e){
+           Error error = new Error();
+            error.cambiarMensaje("IOException: e");
+            error.setVisible(true); 
+        }
+     return res;
+    }
 }
