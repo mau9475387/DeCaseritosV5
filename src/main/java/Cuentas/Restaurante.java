@@ -9,9 +9,10 @@ import EDL.ListaDE;
 import Publicaciones.PRestaurante;
 
 public class Restaurante extends Cuenta{
-public String rutaIcon;
+    
     public ListaDE<PRestaurante> publicaciones;
-    public ListaDE<String> zonas;
+    public String zNiños,wifi,delivery;
+    public String horario,especialidad,direccion,fotoPerfil;
     
     
     public Restaurante(){
@@ -19,31 +20,64 @@ public String rutaIcon;
                 tipo = "Restaurante";
     }
     
-        public Restaurante(String nombre, String usuario, String email, String contraseña, String celular, String horario, String especialidad, String direccion) {
-        this.nombre = nombre;
-        this.usuario = usuario;
-        this.email = email;
-        this.contraseña = contraseña;
+    public Restaurante(String nombre, String usuario,String contraseña,
+            String email, String celular,String zNiños,String wifi,
+            String delivery,String horario, String especialidad, 
+            String direccion, String fotoPerfil) {
+                
+                this.nombre = nombre;
+                this.usuario = usuario;
+                this.email = email;
+                this.contraseña = contraseña;
+                this.celular = celular;
+                this.zNiños=zNiños;
+                this.wifi = wifi;
+                this.delivery = delivery;
+                this.horario = horario;
+                this.especialidad = especialidad;
+                this.direccion = direccion;
+                this.fotoPerfil = fotoPerfil;
    
-        tipo = "Restaurante";
-    }
-
-    public Restaurante(String string, String string0, String string1, String string2, String string3) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-   
-@Override
-            public String toString() {
-        return nombre + "----" + usuario + "----" + contraseña + "----" + email + "-----" +tipo;
-            }
-    public void addZonas(String zona){
-        zonas.add(zona);
-    }
-
-    public void crearRestaurante(Restaurante restaurante) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                tipo = "Restaurante";
     }
     
-        
-}
+    //Getters
+    public String getZNiños(){
+        return zNiños;
+    }
+    
+    public String getWifi(){
+        return wifi;
+    }
+    
+    public String getDelivery(){
+        return delivery;
+    }
+
+    public String getHorario(){
+        return horario;
+    }
+    
+    public String getEspecialidad(){
+        return especialidad;
+    }
+    
+    public String getFotoPerfil(){
+        return fotoPerfil;
+    }
+    
+    public String getDireccion(){
+        return direccion;
+    }
+    
+    //Setters
+    public void setFotoPerfil(String nuevo){
+        this.fotoPerfil = nuevo;
+    }
+
+    //Metodos
+    public String toString() {
+        return nombre + "-" + usuario + "-" + contraseña + "-" + email + "-" +tipo;
+    }
+    
+}        

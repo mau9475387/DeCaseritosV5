@@ -18,7 +18,7 @@ public class resP extends javax.swing.JPanel {
     Color naranja;
     CrearCuentas frame;
 
-    public resP() {
+    public resP(CrearCuentas x) {
         initComponents();
         naranja = new Color(247, 87, 26);
         naranjaSuave = new Color(250, 183, 44);
@@ -26,7 +26,7 @@ public class resP extends javax.swing.JPanel {
         crearLbl.setForeground(Color.white);
         cancelarbtn.setBackground(naranja);
         cancelarlbl.setForeground(Color.white);
-        CrearCuentas x = null;
+        
 
         frame = x;
     }
@@ -387,7 +387,7 @@ public class resP extends javax.swing.JPanel {
 
     private void crearBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearBtnMouseClicked
         Restaurante Restaurante = new Restaurante();
-        Restaurante.crearRestaurante(new Restaurante(nombreText.getText(), usuarioText.getText(), mailText.getText(), passText.getText(), celularText.getText()));
+        
 
     }//GEN-LAST:event_crearBtnMouseClicked
 

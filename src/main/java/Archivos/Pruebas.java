@@ -5,6 +5,7 @@
 package Archivos;
 
 import Cuentas.Comensal;
+import Cuentas.Restaurante;
 
 /**
  *
@@ -23,6 +24,10 @@ public class Pruebas {
         prueba.crearComensal(com4);
         Comensal com5 = new Comensal("santos col","snc","sant","san@gmail.com","1234");
         prueba.crearComensal(com5);
+        Restaurante res1 = new Restaurante("los castores","salteña","el secreto es carne de rata",
+                            "castores@gmail.com","78943444","true","false","true",
+                            "todos los días, la economía está fea","salteñas pe","xxx","c//foto");
+        prueba.crearRestaurante(res1);
     }
     
 }

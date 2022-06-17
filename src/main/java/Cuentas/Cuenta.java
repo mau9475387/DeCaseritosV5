@@ -8,6 +8,7 @@ protected String  nombre,usuario, contraseña, email,celular;
     protected String  propietario,tipo;
     
     protected Cuenta(){
+        propietario = usuario;
     }
     //Setters
     
