@@ -29,7 +29,7 @@ public class CrearCuentas extends javax.swing.JFrame {
         
         ShowPanel(c);//mostramos por defecto el panel de crear comensal
         
-        resP r= new resP();//creamos una variable para el panel de crear cuenta restaurante
+        resP r= new resP(this);//creamos una variable para el panel de crear cuenta restaurante
         
         color();
     }
@@ -280,7 +280,7 @@ public class CrearCuentas extends javax.swing.JFrame {
 
     private void restBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_restBtnMouseClicked
         if(actual == 1){
-            resP nuevo = new resP();
+            resP nuevo = new resP(this);
             actual = 2;
             ShowPanel(nuevo);
             color();
