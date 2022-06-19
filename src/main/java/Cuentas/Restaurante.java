@@ -40,6 +40,10 @@ public class Restaurante extends Cuenta{
    
                 tipo = "Restaurante";
     }
+
+    public Restaurante(String text, String text0, String text1, String text2, String text3, String label, String label0, String label1, String text4, String text5, String text6) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     //Getters
     public String getZNiños(){

@@ -15,6 +15,7 @@ public class perfil extends javax.swing.JPanel {
      */
     public perfil() {
         initComponents();
+
     }
 
     /**
@@ -27,43 +28,44 @@ public class perfil extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        foto_perfil = new javax.swing.JPanel();
+        usuariolbl = new javax.swing.JLabel();
+        seguidoreslbl = new javax.swing.JLabel();
+        publicacioneslbl = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        nombrelbl = new javax.swing.JLabel();
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 153, 0)));
-        jPanel1.setForeground(new java.awt.Color(255, 153, 0));
+        foto_perfil.setBackground(new java.awt.Color(255, 255, 255));
+        foto_perfil.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 153, 0)));
+        foto_perfil.setForeground(new java.awt.Color(255, 153, 0));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout foto_perfilLayout = new javax.swing.GroupLayout(foto_perfil);
+        foto_perfil.setLayout(foto_perfilLayout);
+        foto_perfilLayout.setHorizontalGroup(
+            foto_perfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        foto_perfilLayout.setVerticalGroup(
+            foto_perfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 30, -1, -1));
+        jPanel2.add(foto_perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 30, -1, -1));
 
-        jLabel1.setText("Nombre");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 45, -1, -1));
+        usuariolbl.setText("Nombre");
+        jPanel2.add(usuariolbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
 
-        jLabel2.setText("Seguidores");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 79, -1, -1));
+        seguidoreslbl.setText("Seguidores");
+        jPanel2.add(seguidoreslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
 
-        jLabel3.setText("Publicaiones");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 113, -1, -1));
+        publicacioneslbl.setText("Publicaiones");
+        jPanel2.add(publicacioneslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 113, -1, -1));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 153, 0)));
 
@@ -116,6 +118,9 @@ public class perfil extends javax.swing.JPanel {
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 150, 730, 370));
 
+        nombrelbl.setText("Nombre");
+        jPanel2.add(nombrelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,15 +137,16 @@ public class perfil extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel foto_perfil;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel nombrelbl;
+    private javax.swing.JLabel publicacioneslbl;
+    private javax.swing.JLabel seguidoreslbl;
+    private javax.swing.JLabel usuariolbl;
     // End of variables declaration//GEN-END:variables
 }

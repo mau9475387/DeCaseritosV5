@@ -570,13 +570,6 @@ public class comP extends javax.swing.JPanel {
       Ficheros Comensales = new Ficheros();
         Comensales.crearComensal(new Comensal(nombreText.getText(), usuarioText.getText(),  passText.getText(), mailText.getText(), celularText.getText()));
       
-           File imagenSeleccionadado = new File(pathphotolbl.getText());
-        CrearImagenEnRoot(imagenSeleccionadado, Comensales);
-        try{
-            InsertarUsuario(Comensales);
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
     }//GEN-LAST:event_crearbtnMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
