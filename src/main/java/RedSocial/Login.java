@@ -19,10 +19,6 @@ import Archivos.Ficheros;
 import Cuentas.Comensal;
 import EDL.ListaDE;
 
-/**
- *
- * @author Mau
- */
 public class Login extends javax.swing.JFrame {
 
     int xMouse, yMouse;//posicion del mouse en la pantalla
@@ -422,6 +418,8 @@ public class Login extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

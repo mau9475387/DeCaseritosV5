@@ -4,18 +4,22 @@
  */
 package RedSocial;
 
-/**
- *
- * @author Colque
- */
+import java.awt.Image;
+import java.io.IOException;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 public class perfil extends javax.swing.JPanel {
 
-    /**
-     * Creates new form perfil
-     */
+//   Usuario usuarioActual = new Usuario();
     public perfil() {
         initComponents();
+/*        usuarioActual = user;
 
+        ImageIcon usuario = new ImageIcon(usuarioActual.path_fotografia);
+        Icon imagenUsuario = new ImageIcon(usuario.getImage().getScaledInstance(lblfotoperfil.getWidth(), lblfotoperfil.getHeight(), Image.SCALE_FAST));
+            lblfotoperfil.setIcon(imagenUsuario);
+*/
     }
 
     /**
@@ -28,44 +32,28 @@ public class perfil extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        foto_perfil = new javax.swing.JPanel();
-        usuariolbl = new javax.swing.JLabel();
-        seguidoreslbl = new javax.swing.JLabel();
-        publicacioneslbl = new javax.swing.JLabel();
+        lblcorreo = new javax.swing.JLabel();
+        lblseguidores = new javax.swing.JLabel();
+        lblpublicaciones = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        nombrelbl = new javax.swing.JLabel();
+        lblnombre = new javax.swing.JLabel();
+        lblfotoperfil = new javax.swing.JLabel();
+        lblusuario = new javax.swing.JLabel();
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        foto_perfil.setBackground(new java.awt.Color(255, 255, 255));
-        foto_perfil.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 153, 0)));
-        foto_perfil.setForeground(new java.awt.Color(255, 153, 0));
+        lblcorreo.setText("Correo");
+        jPanel2.add(lblcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 40, 30));
 
-        javax.swing.GroupLayout foto_perfilLayout = new javax.swing.GroupLayout(foto_perfil);
-        foto_perfil.setLayout(foto_perfilLayout);
-        foto_perfilLayout.setHorizontalGroup(
-            foto_perfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        foto_perfilLayout.setVerticalGroup(
-            foto_perfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        lblseguidores.setText("Seguidores");
+        jPanel2.add(lblseguidores, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, -1, 20));
 
-        jPanel2.add(foto_perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 30, -1, -1));
-
-        usuariolbl.setText("Nombre");
-        jPanel2.add(usuariolbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
-
-        seguidoreslbl.setText("Seguidores");
-        jPanel2.add(seguidoreslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
-
-        publicacioneslbl.setText("Publicaiones");
-        jPanel2.add(publicacioneslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 113, -1, -1));
+        lblpublicaciones.setText("Publicaiones");
+        jPanel2.add(lblpublicaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, -1, 30));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 153, 0)));
 
@@ -116,10 +104,18 @@ public class perfil extends javax.swing.JPanel {
             .addGap(0, 368, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 150, 730, 370));
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 730, 370));
 
-        nombrelbl.setText("Nombre");
-        jPanel2.add(nombrelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
+        lblnombre.setText("Nombre");
+        jPanel2.add(lblnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, 30));
+
+        lblfotoperfil.setBackground(new java.awt.Color(255, 153, 51));
+        lblfotoperfil.setForeground(new java.awt.Color(255, 153, 51));
+        lblfotoperfil.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 153, 0)));
+        jPanel2.add(lblfotoperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 110, 110));
+
+        lblusuario.setText("Usuario");
+        jPanel2.add(lblusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -129,24 +125,23 @@ public class perfil extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel foto_perfil;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel nombrelbl;
-    private javax.swing.JLabel publicacioneslbl;
-    private javax.swing.JLabel seguidoreslbl;
-    private javax.swing.JLabel usuariolbl;
+    private javax.swing.JLabel lblcorreo;
+    private javax.swing.JLabel lblfotoperfil;
+    private javax.swing.JLabel lblnombre;
+    private javax.swing.JLabel lblpublicaciones;
+    private javax.swing.JLabel lblseguidores;
+    private javax.swing.JLabel lblusuario;
     // End of variables declaration//GEN-END:variables
 }

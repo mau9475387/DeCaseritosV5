@@ -4,10 +4,6 @@
  */
 package RedSocial;
 
-/**
- *
- * @author Mau
- */
 public class dummy extends Error{
     
     

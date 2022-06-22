@@ -6,11 +6,6 @@ package RedSocial;
 
 import java.awt.Color;
 
-
-/**
- *
- * @author Mau
- */
 public class Publicacion extends javax.swing.JPanel {
 
     /**

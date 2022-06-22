@@ -13,11 +13,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-/**
- *
- * @author Mau
- */
-
 public class Sitio extends javax.swing.JFrame {
     
     int xMouse,yMouse;

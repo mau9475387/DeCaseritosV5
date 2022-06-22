@@ -9,11 +9,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Mau
- */
-
 public class CrearCuentas extends javax.swing.JFrame {
     int xMouse,yMouse;//posicion del mouse en la pantalla
 
@@ -312,6 +307,8 @@ public class CrearCuentas extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CrearCuentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

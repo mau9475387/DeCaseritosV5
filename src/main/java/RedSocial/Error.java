@@ -6,10 +6,6 @@ package RedSocial;
 
 import java.awt.Color;
 
-/**
- *
- * @author Mau
- */
 public class Error extends javax.swing.JFrame {
 
     int xMouse,yMouse;
@@ -241,6 +237,7 @@ public class Error extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Error.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
